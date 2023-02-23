@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AgendaDeCitas\GestionDeCitas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HistoriaPacientes\BuscarPacientes\ModificarEliminarPacientes\Documentos\AntecedentesMedicos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HistoriaPacientes\BuscarPacientes\BuscarPacientes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AgendaDeCitas\Calendario.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HistoriaPacientes\NuevoPaciente.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HistoriaPacientes\BuscarPacientes\ModificarEliminarPacientes\Documentos\HistorialClinico.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HistoriaPacientes\BuscarPacientes\ModificarEliminarPacientes\ModificarEliminarPacientes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Configuracion\Perfil.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AgendaDeCitas\GestionDeCitas.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HistoriaPacientes\BuscarPacientes\ModificarEliminarPacientes\Documentos\AntecedentesMedicos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HistoriaPacientes\BuscarPacientes\BuscarPacientes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AgendaDeCitas\Calendario.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HistoriaPacientes\NuevoPaciente.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HistoriaPacientes\BuscarPacientes\ModificarEliminarPacientes\Documentos\HistorialClinico.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Inicio.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HistoriaPacientes\BuscarPacientes\ModificarEliminarPacientes\ModificarEliminarPacientes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Configuracion\Perfil.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

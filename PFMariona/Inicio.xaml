@@ -1,0 +1,73 @@
+﻿<Window x:Class="PFMariona.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PFMariona"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="1100" Height="600" Background="#FFCAB6EF" WindowStartupLocation="CenterScreen" WindowStyle="None" MaxWidth="1100" MaxHeight="600">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55*"></ColumnDefinition>
+            <ColumnDefinition Width="184*"></ColumnDefinition>
+            <ColumnDefinition Width="36*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--NOMBRE APLICACIÓN-->
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#FFCAB6EF" Foreground="White" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" FontSize="70">uMind</TextBlock>
+
+        <!--MENÚ-->
+        <!--#region HISTORIA PACIENTES-->
+        <TextBlock Grid.Column="0" Grid.Row="2" x:Name="btnPacientes" Foreground="#FFFDFDFD" FontWeight="Bold" Background="#FF722AF7" TextAlignment="Center">HISTORIA PACIENTES</TextBlock>
+        <Button Grid.Column="0" Grid.Row="2" x:Name="btnNuevoPaciente" Click="btnNuevoPaciente_Click" Background="#FF9F6CFD" Foreground="White" Content="Nuevo" Margin="0,29,0,0" Grid.RowSpan="2"/>
+        <Button Grid.Column="0" Grid.Row="3" x:Name="btnBuscarPaciente" Click="btnBuscarPaciente_Click" Background="#FF9F6CFD" Foreground="White" Content="Buscar" Margin="0,29,0,0" Grid.RowSpan="2"/>
+        <!--#endregion-->
+
+        <!--#region AGENDA CITAS-->
+        <TextBlock Grid.Column="0" Grid.Row="6" x:Name="btnCitas" Background="#FF722AF7" Foreground="White" FontWeight="Bold" TextAlignment="Center">AGENDA DE CITAS</TextBlock>
+        <Button Grid.Column="0" Grid.Row="6" x:Name="btnCalendario" Click="btnCalendario_Click" Background="#FF9F6CFD" Foreground="White" Content="Calendario" Margin="0,29,0,0" Grid.RowSpan="2"/>
+        <Button Grid.Column="0" Grid.Row="7" x:Name="btnNuevaCita" Background="#FF9F6CFD" Foreground="White" Content="Gestión de citas" Margin="0,29,0,0" Grid.RowSpan="2"/>
+
+        <!--#endregion-->
+
+        <!--#region CONFIGURACIÓN-->
+        <TextBlock Grid.Column="0" Grid.Row="10" x:Name="btnConfiguracion" Background="#FF722AF7" Foreground="White" FontWeight="Bold" TextAlignment="Center">CONFIGURACIÓN</TextBlock>
+        <Button Grid.Column="0" Grid.Row="11" x:Name="btnPerfil" Click="btnPerfil_Click" Background="#FF9F6CFD" Foreground="White" Content="Perfil"/>
+        <Button Grid.Column="0" Grid.Row="12" x:Name="btnCerrarSesion" Background="#FF9F6CFD" Foreground="White" Content="Cerrar sesión"/>
+        <!--#endregion-->
+
+        <!--ELEMENTOS-->
+        <TextBlock Grid.Column="1" Grid.Row="7" Grid.RowSpan="2" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="385,21,0,0">Bienvenid@ Mariona</TextBlock>
+        <!--Aquí se tendrá que insertar el logo-->
+
+
+        <!--BOTÓN SALIR-->
+        <Button Grid.Column="0" Grid.Row="14" Grid.RowSpan ="3" Name="btnSalir" Click="btnSalir_Click" Foreground="White" FontWeight="Bold" Background="#FF722AF7" Content="SALIR" Margin="0,29,0,0"/>
+
+    </Grid>
+
+
+
+</Window>
