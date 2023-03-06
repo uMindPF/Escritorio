@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:uMind.AgendaDeCitas"
         mc:Ignorable="d"
-        Title="GestionDeCitas" Height="600" Width="1100" Background="#FFCAB6EF" WindowStartupLocation="CenterScreen" WindowStyle="None" MaxWidth="1100">
+        Title="GestionDeCitas" Height="600" Width="1100" Background="#97B5DD" WindowStartupLocation="CenterScreen" WindowStyle="None" MaxWidth="1100">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -35,30 +35,30 @@
         </Grid.RowDefinitions>
 
         <!--NOMBRE APLICACIÓN-->
-        <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#FFCAB6EF" Foreground="White" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" FontSize="70">uMind</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#97B5DD" Foreground="White" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" FontSize="70">uMind</TextBlock>
 
         <!--#region HISTORIA PACIENTES-->
-        <TextBlock Grid.Column="0" Grid.Row="2" x:Name="textBlockPacientes" Foreground="#FFFDFDFD" FontWeight="Bold" Background="#FF722AF7" TextAlignment="Center">HISTORIA PACIENTES</TextBlock>
-        <Button Grid.Column="0" Grid.Row="3" x:Name="btnNuevoPaciente"  Background="#FF9F6CFD" Foreground="White" Content="Nuevo"/>
-        <Button Grid.Column="0" Grid.Row="4" x:Name="btnBuscarPaciente" Background="#FF9F6CFD" Foreground="White" Content="Buscar"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" x:Name="textBlockPacientes" Foreground="#FFFDFDFD" FontWeight="Bold" Background="#418661" TextAlignment="Center">HISTORIA PACIENTES</TextBlock>
+        <Button Grid.Column="0" Grid.Row="3" x:Name="btnNuevoPaciente"  Background="#6AA5AF" Foreground="White" Content="Nuevo"/>
+        <Button Grid.Column="0" Grid.Row="4" x:Name="btnBuscarPaciente" Background="#6AA5AF" Foreground="White" Content="Buscar"/>
         <!--#endregion-->
 
         <!--#region AGENDA CITAS-->
-        <TextBlock Grid.Column="0" Grid.Row="6" x:Name="textBlockCitas" Background="#FF722AF7" Foreground="White" FontWeight="Bold" TextAlignment="Center">AGENDA DE CITAS</TextBlock>
-        <Button Grid.Column="0" Grid.Row="7" x:Name="btnCalendario" Background="#FFDCD7E4" Content="Calendario"/>
-        <Button Grid.Column="0" Grid.Row="8" x:Name="btnNuevaCita" Background="#FF9F6CFD" Foreground="White" Content="Gestión de citas"/>
+        <TextBlock Grid.Column="0" Grid.Row="6" x:Name="textBlockCitas" Background="#418661" Foreground="White" FontWeight="Bold" TextAlignment="Center">AGENDA DE CITAS</TextBlock>
+        <Button Grid.Column="0" Grid.Row="7" x:Name="btnCalendario" Background="#6AA5AF" Foreground="White" Content="Calendario"/>
+        <Button Grid.Column="0" Grid.Row="8" x:Name="btnNuevaCita" Background="#6AA5AF" Foreground="White" Content="Gestión de citas"/>
 
         <!--#endregion-->
 
         <!--#region CONFIGURACIÓN-->
-        <TextBlock Grid.Column="0" Grid.Row="10" x:Name="textBlockConfiguración" Background="#FF722AF7" Foreground="White" FontWeight="Bold" TextAlignment="Center">CONFIGURACIÓN</TextBlock>
-        <Button Grid.Column="0" Grid.Row="11" x:Name="btnPerfil" Click="btnPerfil_Click" Background="#FF9F6CFD" Foreground="White"  Content="Perfil"/>
-        <Button Grid.Column="0" Grid.Row="12" x:Name="btnCerrarSesion" Background="#FF9F6CFD" Foreground="White" Content="Cerrar sesión"/>
+        <TextBlock Grid.Column="0" Grid.Row="10" x:Name="textBlockConfiguración" Background="#418661" Foreground="White" FontWeight="Bold" TextAlignment="Center">CONFIGURACIÓN</TextBlock>
+        <Button Grid.Column="0" Grid.Row="11" x:Name="btnPerfil" Click="btnPerfil_Click" Background="#6AA5AF" Foreground="White"  Content="Perfil"/>
+        <Button Grid.Column="0" Grid.Row="12" x:Name="btnCerrarSesion" Background="#6AA5AF" Foreground="White" Content="Cerrar sesión"/>
         <!--#endregion-->
 
-        <Button Grid.Column="0" Grid.Row="15" Grid.RowSpan ="2"  Foreground="White" FontWeight="Bold" Background="#FF722AF7" Content="SALIR"/>
+        <Button Grid.Column="0" Grid.Row="15" Grid.RowSpan ="2"  Foreground="White" FontWeight="Bold" Background="#418661" Content="SALIR"/>
 
-        <TabControl Grid.Column="1" Grid.Row="1" Grid.RowSpan="17"  Background="#FFCAB6EF">
+        <TabControl Grid.Column="1" Grid.Row="1" Grid.RowSpan="17"  Background="#97B5DD">
             <TabItem Header="Citas">                
             </TabItem>
             <TabItem Header="Nueva cita" Height="20" VerticalAlignment="Top">

@@ -71,5 +71,10 @@ namespace PFMariona
             this.Close();
             perfil.Show();
         }
+
+        private void btnNuevoPaciente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

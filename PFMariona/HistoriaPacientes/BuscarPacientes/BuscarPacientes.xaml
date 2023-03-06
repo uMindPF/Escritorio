@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:uMind"
         mc:Ignorable="d"
-        Title="BuscarPacientes" Height="600" Width="1100" Background="#FFCAB6EF" WindowStartupLocation="CenterScreen" WindowStyle="None" MaxHeight="600" MaxWidth="1100">
+        Title="BuscarPacientes" Height="600" Width="1100" Background="#97B5DD" WindowStartupLocation="CenterScreen" WindowStyle="None" MaxHeight="600" MaxWidth="1100">
     <Grid>
 
         <!--COLUMNAS-->
@@ -37,7 +37,7 @@
         </Grid.RowDefinitions>
 
         <!--NOMBRE APLICACIÓN-->
-        <TextBlock Grid.Column="0" Grid.Row="0"  Grid.RowSpan="2" Background="#FFCAB6EF" Foreground="White" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" FontSize="70">uMind</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="0"  Grid.RowSpan="2" Background="#97B5DD" Foreground="White" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" FontSize="70">uMind</TextBlock>
 
         <!--NOMBRE PESTAÑA-->
         <TextBlock Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="8" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Bottom">Listado de pacientes</TextBlock>

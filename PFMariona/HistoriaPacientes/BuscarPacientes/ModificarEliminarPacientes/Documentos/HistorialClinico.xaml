@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PFMariona"
         mc:Ignorable="d"
-        Title="HistorialClinico" Height="450" Width="800" Background="#FFCAB6EF" WindowStyle="None" WindowStartupLocation="CenterScreen" MinHeight="450" MinWidth="800">
+        Title="HistorialClinico" Height="450" Width="800" Background="#97B5DD" WindowStyle="None" WindowStartupLocation="CenterScreen" MinHeight="450" MinWidth="800">
     <Grid>
         <TextBlock TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontWeight="Bold" FontSize="22">HISTORIAL CLÍNICO</TextBlock>
 

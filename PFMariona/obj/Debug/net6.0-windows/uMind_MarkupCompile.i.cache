@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\MarionaGuaCam\Desktop\PFMariona\PFMariona\obj\Debug\net6.0-windows\
+E:\Github\repos\uMindPF\PFMariona\obj\Debug\net6.0-windows\
 uMind
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\MarionaGuaCam\Desktop\PFMariona\PFMariona\App.xaml
+E:\Github\repos\uMindPF\PFMariona\App.xaml
 10198707118
 
 14-2045464234
-194-97651837
+194-200944676
 AgendaDeCitas\Calendario.xaml;AgendaDeCitas\GestionDeCitas.xaml;Configuracion\Perfil.xaml;HistoriaPacientes\BuscarPacientes\BuscarPacientes.xaml;HistoriaPacientes\BuscarPacientes\ModificarEliminarPacientes\Documentos\AntecedentesMedicos.xaml;HistoriaPacientes\BuscarPacientes\ModificarEliminarPacientes\Documentos\HistorialClinico.xaml;HistoriaPacientes\BuscarPacientes\ModificarEliminarPacientes\ModificarEliminarPacientes.xaml;HistoriaPacientes\NuevoPaciente.xaml;Inicio.xaml;Login.xaml;
 
 False

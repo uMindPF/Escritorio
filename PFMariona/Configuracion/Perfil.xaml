@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:uMind"
         mc:Ignorable="d"
-        Title="Perfil" Height="600" Width="1100" Background="#FFCAB6EF" WindowStartupLocation="CenterScreen" WindowStyle="None" MaxWidth="1100">
+        Title="Perfil" Height="600" Width="1100" Background="#97B5DD" WindowStartupLocation="CenterScreen" WindowStyle="None" MaxWidth="1100">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="55*"></ColumnDefinition>
@@ -35,25 +35,25 @@
         </Grid.RowDefinitions>
 
         <!--NOMBRE APLICACIÓN-->
-        <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#FFCAB6EF" Foreground="White" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" FontSize="70">uMind</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Background="#97b5dd" Foreground="White" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" FontSize="70">uMind</TextBlock>
 
         <!--MENÚ-->
         <!--#region HISTORIA PACIENTES-->
-        <TextBlock Grid.Column="0" Grid.Row="2" x:Name="btnPacientes" Foreground="#FFFDFDFD" FontWeight="Bold" Background="#FF722AF7" TextAlignment="Center">HISTORIA PACIENTES</TextBlock>
-        <Button Grid.Column="0" Grid.Row="2"  Background="#FF9F6CFD" Foreground="White" Content="Nuevo" Margin="0,29,0,0" Grid.RowSpan="2"/>
-        <Button Grid.Column="0" Grid.Row="3" Background="#FF9F6CFD" Foreground="White" Content="Buscar" Margin="0,29,0,0" Grid.RowSpan="2"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" x:Name="btnPacientes" Foreground="#FFFDFDFD" FontWeight="Bold" Background="#418661" TextAlignment="Center">HISTORIA PACIENTES</TextBlock>
+        <Button Grid.Column="0" Grid.Row="2"  Background="#6AA5AF" Foreground="White" Content="Nuevo" Margin="0,29,0,0" Grid.RowSpan="2"/>
+        <Button Grid.Column="0" Grid.Row="3" Background="#6AA5AF" Foreground="White" Content="Buscar" Margin="0,29,0,0" Grid.RowSpan="2"/>
         <!--#endregion-->
 
         <!--#region AGENDA CITAS-->
-        <TextBlock Grid.Column="0" Grid.Row="6" x:Name="btnCitas" Background="#FF722AF7" Foreground="White" FontWeight="Bold" TextAlignment="Center">AGENDA DE CITAS</TextBlock>
-        <Button Grid.Column="0" Grid.Row="6" x:Name="btnCalendario"  Background="#FF9F6CFD" Foreground="White" Content="Calendario" Margin="0,29,0,0" Grid.RowSpan="2"/>
-        <Button Grid.Column="0" Grid.Row="7" x:Name="btnNuevaCita" Background="#FF9F6CFD" Foreground="White" Content="Gestión de citas" Margin="0,29,0,0" Grid.RowSpan="2"/>
+        <TextBlock Grid.Column="0" Grid.Row="6" x:Name="btnCitas" Background="#418661" Foreground="White" FontWeight="Bold" TextAlignment="Center">AGENDA DE CITAS</TextBlock>
+        <Button Grid.Column="0" Grid.Row="6" x:Name="btnCalendario"  Background="#6AA5AF" Foreground="White" Content="Calendario" Margin="0,29,0,0" Grid.RowSpan="2"/>
+        <Button Grid.Column="0" Grid.Row="7" x:Name="btnNuevaCita" Background="#6AA5AF" Foreground="White" Content="Gestión de citas" Margin="0,29,0,0" Grid.RowSpan="2"/>
         <!--#endregion-->
 
         <!--#region CONFIGURACIÓN-->
-        <TextBlock Grid.Column="0" Grid.Row="10" x:Name="btnConfiguracion" Background="#FF722AF7" Foreground="White" FontWeight="Bold" TextAlignment="Center">CONFIGURACIÓN</TextBlock>
-        <Button Grid.Column="0" Grid.Row="11" x:Name="btnPerfil" Background="#FF9F6CFD" Foreground="White"  Content="Perfil" />
-        <Button Grid.Column="0" Grid.Row="12" x:Name="btnCerrarSesion" Background="#FF9F6CFD" Foreground="White" Content="Cerrar sesión" />
+        <TextBlock Grid.Column="0" Grid.Row="10" x:Name="btnConfiguracion" Background="#418661" Foreground="White" FontWeight="Bold" TextAlignment="Center">CONFIGURACIÓN</TextBlock>
+        <Button Grid.Column="0" Grid.Row="11" x:Name="btnPerfil" Background="#6AA5AF" Foreground="White"  Content="Perfil" />
+        <Button Grid.Column="0" Grid.Row="12" x:Name="btnCerrarSesion" Background="#6AA5AF" Foreground="White" Content="Cerrar sesión" />
         <!--#endregion-->
 
         <!--ELEMENTOS-->
@@ -65,6 +65,6 @@
         <!--Aquí se tendrá que insertar el logo-->
 
         <!--BOTÓN SALIR-->
-        <Button Grid.Column="0" Grid.Row="14" Grid.RowSpan ="3" Name="btnSalir"  Foreground="White" FontWeight="Bold" Background="#FF722AF7" Content="SALIR" Margin="0,29,0,0"/>
+        <Button Grid.Column="0" Grid.Row="14" Grid.RowSpan ="3" Name="btnSalir"  Foreground="White" FontWeight="Bold" Background="#418661" Content="SALIR" Margin="0,29,0,0" Click="btnSalir_Click"/>
     </Grid>
 </Window>
