@@ -1,0 +1,27 @@
+﻿<Window x:Class="uMind.PantallaDeCarga"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:uMind"
+        mc:Ignorable="d"
+        Title="PantallaDeCarga" Height="450" Width="900" Background="Transparent" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="{x:Null}">
+    <Grid>
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="6"  BorderThickness="3">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF9DDEB0" Offset="0"></GradientStop>
+                    <GradientStop Color="#FF0033FF" Offset="0.75"></GradientStop>
+                    <GradientStop Color="#FF72A8F5" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <Border Margin="0,-42,0,42">
+            <Border.Background>
+                <ImageBrush ImageSource="Imagenes/logoCompletoBlanco.png" Stretch="Uniform"></ImageBrush>
+            </Border.Background>
+        </Border>
+        <ProgressBar Name="progressbar" Grid.Column="0" Margin="215,381,215,42" Foreground="#FF6CABE6"/>
+    </Grid>
+</Window>

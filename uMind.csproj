@@ -1,0 +1,52 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="anterior.png" />
+    <None Remove="atras.png" />
+    <None Remove="boton-editar.png" />
+    <None Remove="calendario.png" />
+    <None Remove="contrasena.png" />
+    <None Remove="eliminar.png" />
+    <None Remove="logoCompletoBlanco.png" />
+    <None Remove="logoUBlanco.png" />
+    <None Remove="minimizar.png" />
+    <None Remove="modificar.png" />
+    <None Remove="nuevo-documento.png" />
+    <None Remove="pacientes.png" />
+    <None Remove="salir.png" />
+    <None Remove="siguiente.png" />
+    <None Remove="uMindBlanco.png" />
+    <None Remove="usuario.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dragablz" Version="0.0.3.234" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Imagenes\anterior.png" />
+    <Resource Include="Imagenes\atras.png" />
+    <Resource Include="Imagenes\boton-editar.png" />
+    <Resource Include="Imagenes\calendario.png" />
+    <Resource Include="Imagenes\contrasena.png" />
+    <Resource Include="Imagenes\eliminar.png" />
+    <Resource Include="Imagenes\logoCompletoBlanco.png" />
+    <Resource Include="Imagenes\logoUBlanco.png" />
+    <Resource Include="Imagenes\minimizar.png" />
+    <Resource Include="Imagenes\modificar.png" />
+    <Resource Include="Imagenes\nuevo-documento.png" />
+    <Resource Include="Imagenes\pacientes.png" />
+    <Resource Include="Imagenes\salir.png" />
+    <Resource Include="Imagenes\siguiente.png" />
+    <Resource Include="Imagenes\uMindBlanco.png" />
+    <Resource Include="Imagenes\usuario.png" />
+  </ItemGroup>
+
+</Project>
