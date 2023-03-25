@@ -42,12 +42,12 @@
         <!-- Estaria bien que fuesen iconos y no palabras-->
 
 
-        <TextBox Grid.Row="1" Padding="40,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="White" FontWeight="Bold" FontSize="18" Margin="298,0,0,0"  >
+        <TextBox x:Name="usernameText" Grid.Row="1" Padding="40,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="White" FontWeight="Bold" FontSize="18" Margin="298,0,0,0"  >
             <TextBox.Background>
                 <ImageBrush  Stretch="Uniform" AlignmentX="Left" ImageSource="Imagenes/usuario.png"  />
             </TextBox.Background>
         </TextBox>
-        <TextBox Grid.Row="2" Padding="40,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="White" FontWeight="Bold" FontSize="18" Margin="298,0,0,0"  >
+        <TextBox x:Name="passwordText" Grid.Row="2" Padding="40,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="White" FontWeight="Bold" FontSize="18" Margin="298,0,0,0"  >
             <TextBox.Background>
                 <ImageBrush  Stretch="Uniform" AlignmentX="Left" ImageSource="Imagenes/contrasena.png"  />
             </TextBox.Background>

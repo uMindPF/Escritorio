@@ -36,3 +36,41 @@ C:\Users\MarionaGuaCam\OneDrive - Centre d'Estudis Monlau\2DAM\M7-Desenvolupamen
 C:\Users\MarionaGuaCam\OneDrive - Centre d'Estudis Monlau\2DAM\M7-DesenvolupamentsIinterficies\UF1\Proyecto3\uMind\obj\Debug\net6.0-windows\ModificarCita.g.cs
 C:\Users\MarionaGuaCam\OneDrive - Centre d'Estudis Monlau\2DAM\M7-DesenvolupamentsIinterficies\UF1\Proyecto3\uMind\obj\Debug\net6.0-windows\ModificarCita.baml
 C:\Users\MarionaGuaCam\OneDrive - Centre d'Estudis Monlau\2DAM\M7-DesenvolupamentsIinterficies\UF1\Proyecto3\uMind\obj\Debug\net6.0-windows\App.baml
+C:\Enric\Github\Escritorio\bin\Debug\net6.0-windows\uMind.exe
+C:\Enric\Github\Escritorio\bin\Debug\net6.0-windows\uMind.deps.json
+C:\Enric\Github\Escritorio\bin\Debug\net6.0-windows\uMind.runtimeconfig.json
+C:\Enric\Github\Escritorio\bin\Debug\net6.0-windows\uMind.dll
+C:\Enric\Github\Escritorio\bin\Debug\net6.0-windows\uMind.pdb
+C:\Enric\Github\Escritorio\bin\Debug\net6.0-windows\Dragablz.dll
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind.csproj.AssemblyReference.cache
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\BuscarPaciente.g.cs
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\Login.g.cs
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\ModificarCita.g.cs
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\ModificarPaciente.g.cs
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\PantallaDeCarga.g.cs
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\RegistrarCita.g.cs
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\RegistrarPaciente.g.cs
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\App.g.cs
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind_MarkupCompile.cache
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind_MarkupCompile.lref
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\App.baml
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\BuscarPaciente.baml
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\Login.baml
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\ModificarCita.baml
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\ModificarPaciente.baml
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\PantallaDeCarga.baml
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\RegistrarCita.baml
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\RegistrarPaciente.baml
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind.g.resources
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind.GeneratedMSBuildEditorConfig.editorconfig
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind.AssemblyInfoInputs.cache
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind.AssemblyInfo.cs
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind.csproj.CoreCompileInputs.cache
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind.csproj.CopyComplete
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind.dll
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\refint\uMind.dll
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind.pdb
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\uMind.genruntimeconfig.cache
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\ref\uMind.dll

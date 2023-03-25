@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using uMind.Service;
 
 namespace uMind
 {
@@ -26,11 +27,20 @@ namespace uMind
             
         }
 
-        private void btnEntrar_Click(object sender, RoutedEventArgs e)
+        private async void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+
+            string username = usernameText.Text;
+            string password = passwordText.Text;
+
+
+            if (await LoginService.Login(username, password))
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+            
         }
     }
 }

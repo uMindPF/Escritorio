@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\MarionaGuaCam\OneDrive - Centre d'Estudis Monlau\2DAM\M7-DesenvolupamentsIinterficies\UF1\Proyecto3\uMind\obj\Debug\net6.0-windows\
+C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\
 uMind
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\MarionaGuaCam\OneDrive - Centre d'Estudis Monlau\2DAM\M7-DesenvolupamentsIinterficies\UF1\Proyecto3\uMind\App.xaml
+C:\Enric\Github\Escritorio\App.xaml
 81732742698
 
-121539510177
-195-800137008
+141325452966
+1951705160727
 BuscarPaciente.xaml;Login.xaml;MainWindow.xaml;ModificarCita.xaml;ModificarPaciente.xaml;PantallaDeCarga.xaml;RegistrarCita.xaml;RegistrarPaciente.xaml;
 
 False
