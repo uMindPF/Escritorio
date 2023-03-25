@@ -29,6 +29,7 @@ namespace uMind
 
         private async void btnEntrar_Click(object sender, RoutedEventArgs e)
         {
+            errorLabel.Visibility = Visibility.Hidden;
 
             string username = usernameText.Text;
             string password = passwordText.Text;
@@ -40,7 +41,11 @@ namespace uMind
                 mainWindow.Show();
                 this.Close();
             }
-            
+            else
+            {
+                errorLabel.Visibility = Visibility.Visible;
+            }
+
         }
     }
 }

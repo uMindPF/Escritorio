@@ -9,16 +9,17 @@ namespace uMind.Model
 {
     public class Pacientes
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Psicologo { get; set; }
-        public string Población { get; set; }
-        public string Sexo { get; set; }
-        public string FechaNacimiento { get; set; }
-        public string FechaInicio { get; set; }
-        public string Correo { get; set; }
-        public string Telefono { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public string apellidos { get; set; }
+        public Doctor doctor { get; set; }
+        public string poblacion { get; set; }
+        public string sexo { get; set; }
+        public string fechaNacimiento { get; set; }
+        public string fechaAlta { get; set; }
+        public string fechaBaja { get; set; }
+        public string email { get; set; }
+        public string telefono { get; set; }
 
 
     }
@@ -39,7 +40,7 @@ namespace uMind.Model
 
         public void AgregarPaciente(int id, string nombre)
         {
-            Pacientes pacientes = new Pacientes { Id = id, Nombre = nombre };
+            Pacientes pacientes = new Pacientes { id = id, nombre = nombre };
             Pacientes.Add(pacientes);
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using uMind.Model;
+using uMind.Service;
 
 namespace uMind
 {
@@ -24,6 +26,10 @@ namespace uMind
         public MainWindow()
         {
             InitializeComponent();
+
+            getDoctoresAsync();
+            getCitasAsync();
+            getPacientesAsync();
 
             //Prueba combobox psicologos
             cbPsicologo.Items.Add("08291 Abel");
@@ -115,6 +121,56 @@ namespace uMind
         private void btnModificar2_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private async void getDoctoresAsync()
+        {
+            var doctors = await DoctorService.getDoctors();
+
+            try
+            {
+                foreach (var doctor in doctors)
+                {
+                    cbPsicologo.Items.Add(doctor.nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private async void getCitasAsync()
+        {
+
+        }
+
+        private async void getPacientesAsync()
+        {
+            var pacientes = await PacienteService.getPacientes();
+
+            if (pacientes == null)
+            {
+                return;
+            }
+
+            try
+            {
+                foreach (var paciente in pacientes)
+                {
+                    dataGridPacientes2.Items.Add(new
+                    {
+                        Id = paciente.id, Nombre = paciente.nombre, Psicologo = paciente.doctor.nombre,
+                        Poblacion = paciente.poblacion, Sexo = paciente.sexo,
+                        FechaNacimiento = paciente.fechaNacimiento, FechaInicio = paciente.fechaAlta,
+                        Correo = paciente.email, Telefono = paciente.telefono
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

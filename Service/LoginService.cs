@@ -20,9 +20,16 @@ namespace uMind.Service
                 Encoding.UTF8,
                 "application/json");
 
-            using HttpResponseMessage response = await HttpClient.PostAsync(ConnectionInfo.URL_API + "authorize", jsonContent);
-
-            return response.IsSuccessStatusCode;
+            try
+            {
+                using HttpResponseMessage response =
+                    await HttpClient.PostAsync(ConnectionInfo.URL_API + "authorize", jsonContent);
+                return response.IsSuccessStatusCode;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
