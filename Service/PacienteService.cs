@@ -26,7 +26,6 @@ namespace uMind.Service
 
                 if (response.IsSuccessStatusCode)
                 {
-                    MessageBox.Show(await response.Content.ReadAsStringAsync());
                     return JsonSerializer.Deserialize<List<Pacientes>>(await response.Content.ReadAsStringAsync());
                 }
 

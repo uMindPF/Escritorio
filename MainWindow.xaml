@@ -83,7 +83,7 @@
                         </Button>
 
                         <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF0D1771" Height="22" Width="92" Canvas.Left="245" Canvas.Top="130">PSICÓLOGO</TextBlock>
-                        <ComboBox Name="cbPsicologo" Canvas.Left="354" Canvas.Top="127" Width="176" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <ComboBox Name="cbPsicologo" Canvas.Left="354" Canvas.Top="127" Width="176" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="changeSelectedDoctor"/>
                         <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}"  CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}"    Name="dataGridCitas" FrozenColumnCount="3"  Height="354" Canvas.Left="245" Canvas.Top="186" HorizontalAlignment="Left" VerticalAlignment="Top" Width="952"  Background="#FF498384" >
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn HeaderStyle="{StaticResource HeaderStyle}" Header="#" IsReadOnly="True" Width="auto">

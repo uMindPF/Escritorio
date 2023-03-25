@@ -23,6 +23,9 @@ namespace uMind
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private List<Doctor> doctores;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,11 +35,14 @@ namespace uMind
             getPacientesAsync();
 
             //Prueba combobox psicologos
+            /*
             cbPsicologo.Items.Add("08291 Abel");
             cbPsicologo.Items.Add("01154 Laura");
             cbPsicologo.Items.Add("32189 Alba");
+            */
 
             //Pruebas datos datagrid Citas
+            /*
             dataGridCitas.Items.Add(new { IdCita = 13024, IdPaciente = 64781, NombrePaciente = "Mariona Guàrdia", ApellidoPaciente = "Guardia", Psicologo = "08291 Abel", Dia = "25/03/23", Hora = "18:30", Estado = "Pendiente", TipoVisita = "Mantenimiento" });
             dataGridCitas.Items.Add(new { IdCita = 13024, IdPaciente = 64781, NombrePaciente = "Mariona Guàrdia", ApellidoPaciente = "Guardia", Psicologo = "08291 Abel", Dia = "25/03/23", Hora = "18:30", Estado = "Pendiente", TipoVisita = "Mantenimiento" });
             dataGridCitas.Items.Add(new { IdCita = 13024, IdPaciente = 64781, NombrePaciente = "Mariona Guàrdia", ApellidoPaciente = "Guardia", Psicologo = "08291 Abel", Dia = "25/03/23", Hora = "18:30", Estado = "Pendiente", TipoVisita = "Mantenimiento" });
@@ -51,8 +57,10 @@ namespace uMind
             dataGridCitas.Items.Add(new { IdCita = 13024, IdPaciente = 64781, NombrePaciente = "Mariona Guàrdia", ApellidoPaciente = "Guardia", Psicologo = "08291 Abel", Dia = "25/03/23", Hora = "18:30", Estado = "Pendiente", TipoVisita = "Mantenimiento" });
             dataGridCitas.Items.Add(new { IdCita = 13024, IdPaciente = 64781, NombrePaciente = "Mariona Guàrdia", ApellidoPaciente = "Guardia", Psicologo = "08291 Abel", Dia = "25/03/23", Hora = "18:30", Estado = "Pendiente", TipoVisita = "Mantenimiento" });
             dataGridCitas.Items.Add(new { IdCita = 13024, IdPaciente = 64781, NombrePaciente = "Mariona Guàrdia", ApellidoPaciente = "Guardia", Psicologo = "08291 Abel", Dia = "25/03/23", Hora = "18:30", Estado = "Pendiente", TipoVisita = "Mantenimiento" });
+            */
 
             //Prueba datos datagrid Pacientes
+            /*
             dataGridPacientes2.Items.Add(new { Id = 1, Nombre = "Mariona Guàrdia", Psicologo = "08291 Abel", Poblacion = "Ripollet", Sexo = "Femenino", FechaNacimiento = "19/07/1997", FechaInicio = "23/03/22", Correo = "marionaguardia19@gmail.com", Telefono = "649437248" });
             dataGridPacientes2.Items.Add(new { Id = 1, Nombre = "Mariona Guàrdia", Psicologo = "08291 Abel", Poblacion = "Ripollet", Sexo = "Femenino", FechaNacimiento = "19/07/1997", FechaInicio = "23/03/22", Correo = "marionaguardia19@gmail.com", Telefono = "649437248" });
             dataGridPacientes2.Items.Add(new { Id = 1, Nombre = "Mariona Guàrdia", Psicologo = "08291 Abel", Poblacion = "Ripollet", Sexo = "Femenino", FechaNacimiento = "19/07/1997", FechaInicio = "23/03/22", Correo = "marionaguardia19@gmail.com", Telefono = "649437248" });
@@ -68,7 +76,7 @@ namespace uMind
             dataGridPacientes2.Items.Add(new { Id = 1, Nombre = "Mariona Guàrdia", Psicologo = "08291 Abel", Poblacion = "Ripollet", Sexo = "Femenino", FechaNacimiento = "19/07/1997", FechaInicio = "23/03/22", Correo = "marionaguardia19@gmail.com", Telefono = "649437248" });
             dataGridPacientes2.Items.Add(new { Id = 1, Nombre = "Mariona Guàrdia", Psicologo = "08291 Abel", Poblacion = "Ripollet", Sexo = "Femenino", FechaNacimiento = "19/07/1997", FechaInicio = "23/03/22", Correo = "marionaguardia19@gmail.com", Telefono = "649437248" });
             dataGridPacientes2.Items.Add(new { Id = 1, Nombre = "Mariona Guàrdia", Psicologo = "08291 Abel", Poblacion = "Ripollet", Sexo = "Femenino", FechaNacimiento = "19/07/1997", FechaInicio = "23/03/22", Correo = "marionaguardia19@gmail.com", Telefono = "649437248" });
-
+            */
         }
 
 
@@ -123,9 +131,50 @@ namespace uMind
 
         }
 
+        private async void changeSelectedDoctor(object sender, RoutedEventArgs e)
+        {
+            int selectedIndex = cbPsicologo.SelectedIndex;
+
+            if (selectedIndex == -1)
+            {
+                return;
+            }
+
+            var citas = await CitaService.getCitasDoctor(doctores[selectedIndex].id);
+            dataGridCitas.Items.Clear();
+
+            if (citas == null)
+            {
+                return;
+            }
+
+            foreach (var cita in citas)
+            {
+                dataGridCitas.Items.Add(new
+                {
+                    IdCita = cita.id,
+                    IdPaciente = cita.paciente.id,
+                    NombrePaciente = cita.paciente.nombre,
+                    ApellidoPaciente = cita.paciente.apellidos,
+                    Psicologo = cita.doctor.nombre,
+                    Dia = cita.dia,
+                    Hora = cita.hora,
+                    Estado = cita.estado,
+                    TipoVisita = cita.tipoVista
+                });
+            }
+        }
+
         private async void getDoctoresAsync()
         {
             var doctors = await DoctorService.getDoctors();
+            doctores = doctors;
+            cbPsicologo.Items.Clear();
+
+            if (doctors == null)
+            {
+                return;
+            }
 
             try
             {
@@ -135,13 +184,31 @@ namespace uMind
                 }
             }
             catch (Exception ex)
-            {
-
-            }
+            { }
         }
 
         private async void getCitasAsync()
         {
+
+            var citas = await CitaService.getCitas();
+            if (citas == null)
+            {
+                return;
+            }
+
+            try
+            {
+                foreach (var cita in citas)
+                {
+                    dataGridCitas.Items.Add(new
+                    {
+                        IdCita = cita.id, IdPaciente = cita.paciente.id, NombrePaciente = cita.paciente.nombre, ApellidoPaciente = cita.paciente.apellidos, 
+                        Psicologo = cita.doctor.nombre, Dia = cita.dia, Hora = cita.hora, Estado = cita.estado, TipoVisita = cita.tipoVista
+                    });
+                }
+            }
+            catch (Exception ex)
+            { }
 
         }
 
@@ -168,9 +235,7 @@ namespace uMind
                 }
             }
             catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            { }
         }
     }
 }

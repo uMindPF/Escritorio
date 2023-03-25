@@ -22,8 +22,6 @@ namespace uMind.Service
             {
                 string token = await TokenService.getToken("a", "a");
 
-                MessageBox.Show(token);
-
                 HttpClient.DefaultRequestHeaders.Add("Authorization", token);
 
                 using HttpResponseMessage response = await HttpClient.GetAsync(ConnectionInfo.URL_API + "consultas/usuarios");
@@ -38,5 +36,6 @@ namespace uMind.Service
 
             return null;
         }
+
     }
 }
