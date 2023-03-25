@@ -66,7 +66,7 @@
                     </Border.Background>
                     <Canvas Margin="0,10,10,0" HorizontalAlignment="Right" Width="1271">
                         <TextBlock Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="8" FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Arial Black" Canvas.Left="245" Canvas.Top="32"  >REGISTRO DE CITAS</TextBlock>
-                        <DatePicker Name="datePickerCita" Canvas.Left="614" Canvas.Top="126" HorizontalAlignment="Center" VerticalAlignment="Top" Width="214">
+                        <DatePicker Name="datePickerCita" Canvas.Left="614" Canvas.Top="126" HorizontalAlignment="Center" VerticalAlignment="Top" Width="214" SelectedDateChanged="changeSelectedDate">
 
                         </DatePicker>
                         <Button Canvas.Left="575" Canvas.Top="123" BorderBrush="{x:Null}" Background="{x:Null}">

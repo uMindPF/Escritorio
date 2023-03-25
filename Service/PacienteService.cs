@@ -12,17 +12,17 @@ namespace uMind.Service
 {
     internal class PacienteService
     {
-        private static readonly HttpClient HttpClient = new HttpClient();
-
         public static async Task<List<Pacientes>> getPacientes()
         {
             try
             {
                 string token = await TokenService.getToken("a", "a");
 
-                HttpClient.DefaultRequestHeaders.Add("Authorization", token);
+                HttpClient httpClient = new HttpClient();
 
-                using HttpResponseMessage response = await HttpClient.GetAsync(ConnectionInfo.URL_API + "consultas/pacientes");
+                httpClient.DefaultRequestHeaders.Add("Authorization", token);
+
+                using HttpResponseMessage response = await httpClient.GetAsync(ConnectionInfo.URL_API + "consultas/pacientes");
 
                 if (response.IsSuccessStatusCode)
                 {

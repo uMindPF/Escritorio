@@ -11,8 +11,6 @@ namespace uMind.Service
 {
     internal class TokenService
     {
-        private static HttpClient HttpClient = new HttpClient();
-
         public static async Task<string> getToken(String username, String password)
         {
 
@@ -27,7 +25,8 @@ namespace uMind.Service
 
             try
             {
-                using HttpResponseMessage response = await HttpClient.PostAsync(ConnectionInfo.URL_API + "authorize", jsonContent);
+                HttpClient httpClient = new HttpClient();
+                using HttpResponseMessage response = await httpClient.PostAsync(ConnectionInfo.URL_API + "authorize", jsonContent);
 
                 if (response.IsSuccessStatusCode)
                 {

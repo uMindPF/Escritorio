@@ -148,21 +148,31 @@ namespace uMind
                 return;
             }
 
-            foreach (var cita in citas)
+            displayCitas(citas);
+        }
+
+        private async void changeSelectedDate(object sender, EventArgs e)
+        {
+            DateTime? selectedDate = datePickerCita.SelectedDate;
+
+            if (selectedDate == null)
             {
-                dataGridCitas.Items.Add(new
-                {
-                    IdCita = cita.id,
-                    IdPaciente = cita.paciente.id,
-                    NombrePaciente = cita.paciente.nombre,
-                    ApellidoPaciente = cita.paciente.apellidos,
-                    Psicologo = cita.doctor.nombre,
-                    Dia = cita.dia,
-                    Hora = cita.hora,
-                    Estado = cita.estado,
-                    TipoVisita = cita.tipoVista
-                });
+                getCitasAsync();
+                return;
             }
+
+            dataGridCitas.Items.Clear();
+
+            var citas = await CitaService.getCitasDate((DateTime)selectedDate);
+
+            if (citas == null)
+            {
+                return;
+            }
+
+            dataGridCitas.Items.Clear();
+            displayCitas(citas);
+
         }
 
         private async void getDoctoresAsync()
@@ -191,30 +201,22 @@ namespace uMind
         {
 
             var citas = await CitaService.getCitas();
+
+            dataGridCitas.Items.Clear();
+
             if (citas == null)
             {
                 return;
             }
 
-            try
-            {
-                foreach (var cita in citas)
-                {
-                    dataGridCitas.Items.Add(new
-                    {
-                        IdCita = cita.id, IdPaciente = cita.paciente.id, NombrePaciente = cita.paciente.nombre, ApellidoPaciente = cita.paciente.apellidos, 
-                        Psicologo = cita.doctor.nombre, Dia = cita.dia, Hora = cita.hora, Estado = cita.estado, TipoVisita = cita.tipoVista
-                    });
-                }
-            }
-            catch (Exception ex)
-            { }
+            displayCitas(citas);
 
         }
 
         private async void getPacientesAsync()
         {
             var pacientes = await PacienteService.getPacientes();
+            dataGridPacientes2.Items.Clear();
 
             if (pacientes == null)
             {
@@ -237,5 +239,29 @@ namespace uMind
             catch (Exception ex)
             { }
         }
+
+        private void displayCitas(List<Citas> citas)
+        {
+            try
+            {
+                foreach (var cita in citas)
+                {
+                    dataGridCitas.Items.Add(new
+                    {
+                        IdCita = cita.id,
+                        IdPaciente = cita.paciente.id,
+                        NombrePaciente = cita.paciente.nombre,
+                        ApellidoPaciente = cita.paciente.apellidos,
+                        Psicologo = cita.doctor.nombre,
+                        Dia = cita.dia,
+                        Hora = cita.hora,
+                        Estado = cita.estado,
+                        TipoVisita = cita.tipoVista
+                    });
+                }
+            }
+            catch (Exception ex)
+            { }
+        } 
     }
 }

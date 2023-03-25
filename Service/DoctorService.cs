@@ -13,8 +13,6 @@ namespace uMind.Service
 {
     internal class DoctorService
     {
-        
-        private static readonly HttpClient HttpClient = new HttpClient();
 
         public static async Task<List<Doctor>> getDoctors()
         {
@@ -22,9 +20,10 @@ namespace uMind.Service
             {
                 string token = await TokenService.getToken("a", "a");
 
-                HttpClient.DefaultRequestHeaders.Add("Authorization", token);
+                HttpClient httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Add("Authorization", token);
 
-                using HttpResponseMessage response = await HttpClient.GetAsync(ConnectionInfo.URL_API + "consultas/usuarios");
+                using HttpResponseMessage response = await httpClient.GetAsync(ConnectionInfo.URL_API + "consultas/usuarios");
 
                 if (response.IsSuccessStatusCode)
                 {

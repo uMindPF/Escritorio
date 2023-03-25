@@ -7,8 +7,6 @@ namespace uMind.Service
 {
     internal class LoginService
     {
-        private static readonly HttpClient HttpClient = new HttpClient();
-
         public static async Task<bool> Login(string username, string password)
         {
             using StringContent jsonContent = new(
@@ -22,8 +20,8 @@ namespace uMind.Service
 
             try
             {
-                using HttpResponseMessage response =
-                    await HttpClient.PostAsync(ConnectionInfo.URL_API + "authorize", jsonContent);
+                HttpClient httpClient = new HttpClient();
+                using HttpResponseMessage response = await httpClient.PostAsync(ConnectionInfo.URL_API + "authorize", jsonContent);
                 return response.IsSuccessStatusCode;
             }
             catch
