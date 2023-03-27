@@ -24,7 +24,6 @@ namespace uMind
         public Login()
         {
             InitializeComponent();
-            
         }
 
         private async void btnEntrar_Click(object sender, RoutedEventArgs e)

@@ -223,21 +223,7 @@ namespace uMind
                 return;
             }
 
-            try
-            {
-                foreach (var paciente in pacientes)
-                {
-                    dataGridPacientes2.Items.Add(new
-                    {
-                        Id = paciente.id, Nombre = paciente.nombre, Psicologo = paciente.doctor.nombre,
-                        Poblacion = paciente.poblacion, Sexo = paciente.sexo,
-                        FechaNacimiento = paciente.fechaNacimiento, FechaInicio = paciente.fechaAlta,
-                        Correo = paciente.email, Telefono = paciente.telefono
-                    });
-                }
-            }
-            catch (Exception ex)
-            { }
+            displayPacientes(pacientes);
         }
 
         private void displayCitas(List<Citas> citas)
@@ -262,6 +248,82 @@ namespace uMind
             }
             catch (Exception ex)
             { }
-        } 
+        }
+
+        private void displayPacientes(List<Pacientes> pacientes)
+        {
+            try
+            {
+                foreach (var paciente in pacientes)
+                {
+                    dataGridPacientes2.Items.Add(new
+                    {
+                        Id = paciente.id,
+                        Nombre = paciente.nombre,
+                        Psicologo = paciente.doctor.nombre,
+                        Poblacion = paciente.poblacion,
+                        Sexo = paciente.sexo,
+                        FechaNacimiento = paciente.fechaNacimiento,
+                        FechaInicio = paciente.fechaAlta,
+                        Correo = paciente.email,
+                        Telefono = paciente.telefono
+                    });
+                }
+            } catch (Exception ex) { }
+        }
+
+        private async void idPaciente(object sender, TextChangedEventArgs e)
+        {
+            TextBox senderTextBox = (TextBox) sender;
+
+            dataGridPacientes2.Items.Clear();
+
+            if(senderTextBox.Text == "")
+            {
+                getPacientesAsync();
+                return;
+            }
+
+            try
+            {
+                int id = int.Parse(senderTextBox.Text);
+
+                Pacientes paciente = await PacienteService.getPacienteId(id);
+
+                List<Pacientes> pacientes = new List<Pacientes>();
+                if (paciente != null)
+                {
+                    pacientes.Add(paciente);
+                    displayPacientes(pacientes);
+                }
+
+            } catch (Exception ex) {
+                senderTextBox.Text = "";
+            }
+        }
+
+        private async void nombrePaciente(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = (TextBox) sender;
+
+            dataGridPacientes2.Items.Clear();
+
+            if (textBox.Text == "")
+            {
+                getPacientesAsync();
+                return;
+            }
+
+            try
+            {
+                var pacientes = await PacienteService.getPacientesNombre(textBox.Text);
+                if (pacientes == null)
+                {
+                    return;
+                }
+                displayPacientes(pacientes);
+            } catch (Exception ex) { }
+            
+        }
     }
 }
