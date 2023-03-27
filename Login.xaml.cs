@@ -32,7 +32,7 @@ namespace uMind
             errorLabel.Visibility = Visibility.Hidden;
 
             string username = usernameText.Text;
-            string password = passwordText.Text;
+            string password = passwordText.Password;
 
 
             if (await LoginService.Login(username, password))

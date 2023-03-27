@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NQG0TANaydMlJ1oOhtn6qkNiZnnAe4PLAiSl3ZLpktOwQHt6kVMM0wSgkx1o+BfyOsPL3lJ86CIU9q8ldDZPFQ==",
+  "dgSpecHash": "qniWJwg7fI6eefo4Q0jybYkNgsRnIxu3WyOjCa7S/TqzYODbgteb3fjJwVPRnZdLYdij+SB+qe17do3n1NpFBA==",
   "success": true,
-  "projectFilePath": "C:\\Enric\\Github\\Escritorio\\uMind.csproj",
+  "projectFilePath": "D:\\github\\Escritorio\\uMind.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Lourdes\\.nuget\\packages\\dragablz\\0.0.3.234\\dragablz.0.0.3.234.nupkg.sha512"
+    "C:\\Users\\Usuario\\.nuget\\packages\\dragablz\\0.0.3.234\\dragablz.0.0.3.234.nupkg.sha512"
   ],
   "logs": []
 }

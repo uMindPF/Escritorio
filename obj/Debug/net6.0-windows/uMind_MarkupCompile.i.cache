@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Enric\Github\Escritorio\obj\Debug\net6.0-windows\
+D:\github\Escritorio\obj\Debug\net6.0-windows\
 uMind
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Enric\Github\Escritorio\App.xaml
+D:\github\Escritorio\App.xaml
 81732742698
 
-211394337278
-1951705160727
+22-1419398893
+195-610688668
 BuscarPaciente.xaml;Login.xaml;MainWindow.xaml;ModificarCita.xaml;ModificarPaciente.xaml;PantallaDeCarga.xaml;RegistrarCita.xaml;RegistrarPaciente.xaml;
 
-True
+False
 

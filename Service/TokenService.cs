@@ -11,8 +11,11 @@ namespace uMind.Service
 {
     internal class TokenService
     {
-        public static async Task<string> getToken(String username, String password)
+        public static async Task<string> getToken()
         {
+            string username = Properties.Settings.Default.Username;
+            string password = Properties.Settings.Default.Password;
+
 
             using StringContent jsonContent = new(
                 JsonSerializer.Serialize(new

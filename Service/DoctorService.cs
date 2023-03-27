@@ -18,7 +18,7 @@ namespace uMind.Service
         {
             try
             {
-                string token = await TokenService.getToken("a", "a");
+                string token = await TokenService.getToken();
 
                 HttpClient httpClient = new HttpClient();
                 httpClient.DefaultRequestHeaders.Add("Authorization", token);

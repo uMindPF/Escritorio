@@ -22,6 +22,11 @@ namespace uMind.Service
             {
                 HttpClient httpClient = new HttpClient();
                 using HttpResponseMessage response = await httpClient.PostAsync(ConnectionInfo.URL_API + "authorize", jsonContent);
+
+                Properties.Settings.Default.Username = username;
+                Properties.Settings.Default.Password = password;
+                Properties.Settings.Default.Save();
+
                 return response.IsSuccessStatusCode;
             }
             catch

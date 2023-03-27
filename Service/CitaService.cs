@@ -18,7 +18,7 @@ namespace uMind.Service
         {
             try
             {
-                string token = await TokenService.getToken("a", "a");
+                string token = await TokenService.getToken();
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Authorization", token);
                 using HttpResponseMessage response = await client.GetAsync(ConnectionInfo.URL_API + "consultas/citas");
@@ -36,7 +36,7 @@ namespace uMind.Service
         {
             try
             {
-                string token = await TokenService.getToken("a", "a");
+                string token = await TokenService.getToken();
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Authorization", token);
                 using HttpResponseMessage response =
@@ -58,7 +58,7 @@ namespace uMind.Service
         {
             try
             {
-                string token = await TokenService.getToken("a", "a");
+                string token = await TokenService.getToken();
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Add("Authorization", token);
                 using HttpResponseMessage response = 

@@ -80,7 +80,7 @@
                     Stretch="Uniform" />
             </TextBox.Background>
         </TextBox>
-        <TextBox
+        <PasswordBox
             x:Name="passwordText"
             Grid.Row="2"
             Width="348"
@@ -96,14 +96,14 @@
             FontStyle="Normal"
             FontWeight="Bold"
             Foreground="White"
-            TextAlignment="Left">
-            <TextBox.Background>
+            HorizontalContentAlignment="Left">
+            <PasswordBox.Background>
                 <ImageBrush
                     AlignmentX="Left"
                     ImageSource="Imagenes/contrasena.png"
                     Stretch="Uniform" />
-            </TextBox.Background>
-        </TextBox>
+            </PasswordBox.Background>
+        </PasswordBox>
 
         <Label
             x:Name="errorLabel"
