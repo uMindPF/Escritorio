@@ -10,7 +10,7 @@ namespace uMind.Model
     { 
         public int id { get; set; }
         public Doctor doctor { get; set; }
-        public Pacientes paciente { get; set; }
+        public Paciente paciente { get; set; }
         public string dia { get; set; }
         public string hora { get; set; }
         public double duracion { get; set; }

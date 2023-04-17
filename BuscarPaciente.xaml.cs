@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using uMind.Model;
+using uMind.Service;
 
 namespace uMind
 {
@@ -19,35 +13,39 @@ namespace uMind
     /// </summary>
     public partial class BuscarPaciente : Window
     {
+        private List<Paciente> pacientes;
+
         public BuscarPaciente()
         {
             InitializeComponent();
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
 
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
-            datagridBuscar.Items.Add(new { Id = "18974", Nombre = "Mariona", Apellido = "Guardia", Psicologo = "Abel" });
+            cargarPacientes();
+        }
+
+        private async void cargarPacientes()
+        {
+            pacientes = await PacienteService.getPacientes();
+            datagridBuscar.Items.Clear();
+
+            if (pacientes != null)
+            {
+                displayPacientes(pacientes);
+            }
+        }
+
+        private void displayPacientes(List<Paciente> pacientes)
+        {
+            foreach (var paciente in pacientes)
+            {
+	            if (paciente.fechaBaja == "")
+	            {
+		            datagridBuscar.Items.Add(new
+		            {
+			            Id = paciente.id, Nombre = paciente.nombre,
+			            Apellido = paciente.apellidos, Psicologo = paciente.doctor.nombre
+		            });
+	            }
+            }   
         }
 
         private void btnCerrar_Click(object sender, RoutedEventArgs e)
@@ -57,7 +55,70 @@ namespace uMind
 
         private void datagridBuscar_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            var pacienteSelected = datagridBuscar.SelectedItem;
+
+            if (pacienteSelected == null) return;
+            
+            int id = (int)pacienteSelected.GetType().GetProperty("Id").GetValue(pacienteSelected, null);
+
+            foreach (var paciente in pacientes)
+            {
+	            if (paciente.id == id)
+	            {
+		            RegistrarCita registarCita = new RegistrarCita(paciente);
+					registarCita.ShowDialog();
+				}
+            }
+
             this.Close();
+        }
+
+        private async void TextChangedId(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            datagridBuscar.Items.Clear();
+            if (textBox.Text == "")
+            {
+                cargarPacientes();
+                return;
+            }
+            try
+            {
+
+                int id = int.Parse(textBox.Text);
+                var paciente = await PacienteService.getPacienteId(id);
+                List<Paciente> pacientes = new List<Paciente>();
+                pacientes.Add(paciente);
+                datagridBuscar.Items.Clear();
+                if (paciente != null)
+                {
+                    displayPacientes(pacientes);
+                }
+                
+            } catch (Exception ex)
+            {
+                textBox.Text = "";
+            }
+        }
+
+        private async void TextChangedName(object sender, TextChangedEventArgs e)
+        {
+            datagridBuscar.Items.Clear();
+
+            TextBox textBox = sender as TextBox;
+
+            if (textBox.Text == "")
+            {
+                cargarPacientes();
+                return;
+            }
+
+            var pacientes = await PacienteService.getPacientesNombre(textBox.Text);
+            if (pacientes != null)
+            {
+                displayPacientes(pacientes);
+            }
+
         }
     }
 }

@@ -23,10 +23,10 @@
                 <Image Source="Imagenes/salir.png" Height="46" Width="46"/>
             </Button>
         </Border>
-        <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25,81,0,0" Foreground="#FF0D1771" Height="22" Width="74" Grid.Column="1">NOMBRE</TextBlock>
-        <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="420,81,0,0" Foreground="#FF0D1771" Height="22" Width="30">ID</TextBlock>
-        <TextBox Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="33" Width="172"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="112,70,0,0"/>
-        <TextBox Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="33" Width="282"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="455,70,0,0"/>
+        <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="70,81,0,0" Foreground="#FF0D1771" Height="22" Width="74">ID</TextBlock>
+        <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="366,81,0,0" Foreground="#FF0D1771" Height="22" Width="70">NOMBRE</TextBlock>
+        <TextBox Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="33" Width="172"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="112,70,0,0" TextChanged="TextChangedId"/>
+        <TextBox Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="33" Width="282"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="455,70,0,0"  TextChanged="TextChangedName"/>
         <TextBlock Grid.Row="0" FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Arial Black" Canvas.Left="245" Canvas.Top="32" Margin="0,31,0,0"  >SELECCIONA UN PACIENTE</TextBlock>
         <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}"  CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}"   FrozenColumnCount="2" AutoGenerateColumns="True" Name="datagridBuscar" Margin="10,126,10,41"  FontSize="14" FontWeight="Normal" HeadersVisibility="All" Grid.ColumnSpan="2" Background="#FF498384" MouseDoubleClick="datagridBuscar_MouseDoubleClick" >
             <DataGrid.Columns>

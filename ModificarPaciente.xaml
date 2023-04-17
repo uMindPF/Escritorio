@@ -92,7 +92,7 @@
         <!--#endregion-->
 
         <!--#region TEXTBOX-->
-        <TextBox Grid.Row="2" Grid.Column="4" Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16"/>
+        <TextBox Grid.Row="2" Grid.Column="4" Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" IsReadOnly="True" TextChanged="TextBox_TextChanged"/>
 
         <TextBox Grid.Row="4" Grid.Column="4" Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16"/>
         <TextBox Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="3" Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="3,0,0,0"/>
@@ -123,7 +123,7 @@
 
         </Button>
         <Button Grid.Column="3" Name="btnAtras" Click="btnAtras_Click" Background="{x:Null}" Margin="27,34,57,33" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            <Image Source="/atras.png"/>
+            <Image Source="/Imagenes/atras.png"/>
         </Button>
 
         <TextBlock Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="8" FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Arial Black"  >FICHA DE PACIENTE</TextBlock>

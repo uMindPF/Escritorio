@@ -69,11 +69,11 @@
                         <DatePicker Name="datePickerCita" Canvas.Left="614" Canvas.Top="126" HorizontalAlignment="Center" VerticalAlignment="Top" Width="214" SelectedDateChanged="changeSelectedDate">
 
                         </DatePicker>
-                        <Button Canvas.Left="575" Canvas.Top="123" BorderBrush="{x:Null}" Background="{x:Null}">
+                        <Button Canvas.Left="575" Canvas.Top="123" BorderBrush="{x:Null}" Background="{x:Null}" Click="dateForward ">
                             <Image Source="Imagenes/anterior.png" Height="34" Canvas.Top="123" Width="30" Canvas.Left="555" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                         </Button>
-
-                        <Button Canvas.Left="833" Canvas.Top="122" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top">
+ 
+                        <Button Canvas.Left="833" Canvas.Top="122" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top" Click="dateBackward">
                             <Image Height="34" Canvas.Left="849" Canvas.Top="123" Width="30" Source="Imagenes/siguiente.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Button>
 
@@ -101,7 +101,7 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTextColumn Header="Id cita" Binding="{Binding IdCita}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
-                                <DataGridTextColumn Header="Id paciente" Binding="{Binding IdPaciente}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
+                                <DataGridTextColumn Header="Id pacientes" Binding="{Binding IdPaciente}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
                                 <DataGridTextColumn Header="Nombre" Binding="{Binding NombrePaciente}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
                                 <DataGridTextColumn Header="Psicólogo" Binding="{Binding Psicologo}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
                                 <DataGridTextColumn Header="Dia" Binding="{Binding Dia}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
@@ -139,17 +139,17 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button Name="btnModificarCita"  Click="btnModificarCita_Click" Background="#FFA57509" >
+                                            <Button Name="btnModificarPaciente"  Click="btnModificarPaciente_Click"  Background="#FFA57509" >
                                                 <Image  Source="Imagenes/boton-editar.png"  Width="16" Height="16"/>
                                             </Button>
-                                            <Button Margin="5 0 0 0" Background="Red">
+                                            <Button Margin="5 0 0 0" Click="deletePaciente" Background="Red" >
                                                 <Image Source="Imagenes/salir.png" Width="16" Height="16" />
                                             </Button>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn  HeaderStyle="{StaticResource HeaderStyle}" Header="Id paciente" Binding="{Binding Id}" IsReadOnly="True" Width="auto"></DataGridTextColumn>
+                            <DataGridTextColumn  HeaderStyle="{StaticResource HeaderStyle}" Header="Id pacientes" Binding="{Binding Id}" IsReadOnly="True" Width="auto"></DataGridTextColumn>
                             <DataGridTextColumn  HeaderStyle="{StaticResource HeaderStyle}" Header="Nombre" Binding="{Binding Nombre}" IsReadOnly="True" Width="auto"></DataGridTextColumn>
                             <DataGridTextColumn  HeaderStyle="{StaticResource HeaderStyle}" Header="Psicólogo" Binding="{Binding Psicologo}" IsReadOnly="True" Width="auto"></DataGridTextColumn>
                             <DataGridTextColumn  HeaderStyle="{StaticResource HeaderStyle}" Header="Población" Binding="{Binding Poblacion}" IsReadOnly="True" Width="auto"></DataGridTextColumn>

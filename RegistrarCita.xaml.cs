@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using uMind.Model;
 
 namespace uMind
 {
@@ -19,14 +20,20 @@ namespace uMind
     /// </summary>
     public partial class RegistrarCita : Window
     {
-        public RegistrarCita()
+        Paciente _pacientes;
+
+        public RegistrarCita(Paciente pacientes)
         {
-            InitializeComponent();
+	        InitializeComponent();
+
+            this._pacientes = pacientes;
+            TextBoxID.Text = pacientes.id.ToString();
+            TextBoxName.Text = pacientes.nombre;
         }
 
         private void btnBuscarPaciente_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void btnAtras_Click(object sender, RoutedEventArgs e)
