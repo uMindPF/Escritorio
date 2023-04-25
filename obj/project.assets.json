@@ -333,23 +333,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lourdes\\.nuget\\packages\\": {},
+    "C:\\Users\\enriclopped\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Enric\\Github\\Escritorio\\uMind.csproj",
+      "projectUniqueName": "E:\\github\\EscritorioDef\\uMind.csproj",
       "projectName": "uMind",
-      "projectPath": "C:\\Enric\\Github\\Escritorio\\uMind.csproj",
-      "packagesPath": "C:\\Users\\Lourdes\\.nuget\\packages\\",
-      "outputPath": "C:\\Enric\\Github\\Escritorio\\obj\\",
+      "projectPath": "E:\\github\\EscritorioDef\\uMind.csproj",
+      "packagesPath": "C:\\Users\\enriclopped\\.nuget\\packages\\",
+      "outputPath": "E:\\github\\EscritorioDef\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Lourdes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\enriclopped\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

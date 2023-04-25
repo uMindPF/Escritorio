@@ -1,11 +1,9 @@
 ﻿
-FC:\Enric\Github\Escritorio\App.xaml;;
-FC:\Enric\Github\Escritorio\BuscarPaciente.xaml;;
-FC:\Enric\Github\Escritorio\Login.xaml;;
-FC:\Enric\Github\Escritorio\MainWindow.xaml;;
-FC:\Enric\Github\Escritorio\ModificarCita.xaml;;
-FC:\Enric\Github\Escritorio\ModificarPaciente.xaml;;
-FC:\Enric\Github\Escritorio\PantallaDeCarga.xaml;;
-FC:\Enric\Github\Escritorio\RegistrarCita.xaml;;
-FC:\Enric\Github\Escritorio\RegistrarPaciente.xaml;;
+FE:\github\EscritorioDef\App.xaml;;
+FE:\github\EscritorioDef\BuscarPaciente.xaml;;
+FE:\github\EscritorioDef\Login.xaml;;
+FE:\github\EscritorioDef\MainWindow.xaml;;
+FE:\github\EscritorioDef\PantallaDeCarga.xaml;;
+FE:\github\EscritorioDef\RegistrarCita.xaml;;
+FE:\github\EscritorioDef\RegistrarPaciente.xaml;;
 

@@ -6,12 +6,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 using uMind.Service;
 
 namespace uMind
@@ -24,7 +18,6 @@ namespace uMind
         public Login()
         {
             InitializeComponent();
-            
         }
 
         private async void btnEntrar_Click(object sender, RoutedEventArgs e)
@@ -32,7 +25,7 @@ namespace uMind
             errorLabel.Visibility = Visibility.Hidden;
 
             string username = usernameText.Text;
-            string password = passwordText.Text;
+            string password = passwordText.Password;
 
 
             if (await LoginService.Login(username, password))
