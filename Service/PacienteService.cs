@@ -69,28 +69,21 @@ namespace uMind.Service
             return null;
         }
 
-        public static async void savePaciente(Paciente pacientes)
+        public static async Task savePaciente(Paciente pacientes)
         {
-	        try
-	        {
-				string token = await TokenService.getToken();
-				HttpClient httpClient = new HttpClient();
-				httpClient.DefaultRequestHeaders.Add("Authorization", token);
+	        string token = await TokenService.getToken();
+			HttpClient httpClient = new HttpClient();
+			httpClient.DefaultRequestHeaders.Add("Authorization", token);
 
-                string json = JsonSerializer.Serialize(pacientes);
-				StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            string json = JsonSerializer.Serialize(pacientes);
+			StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
-				using HttpResponseMessage response = await httpClient.PostAsync(ConnectionInfo.URL_API + "consultas/pacientes/save", content);
-				if (response.IsSuccessStatusCode)
-				{
-					MessageBox.Show("Pacientes registrado correctamente");
-				}
-				else
-				{
-					MessageBox.Show("Error al registrar el pacientes");
-				}
-	        }
-			catch (Exception ex) { }
-		}
+			using HttpResponseMessage response = await httpClient.PostAsync(ConnectionInfo.URL_API + "consultas/pacientes/save", content);
+			if (!response.IsSuccessStatusCode)
+			{
+				Exception exception = new Exception("Error al registrar el paciente");
+                throw exception;
+			}
+        }
     }
 }

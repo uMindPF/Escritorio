@@ -45,7 +45,7 @@
         <!--#endregion-->
 
         <!--#region COMBOBOX-->
-        <ComboBox Margin="444,260,34,324" Grid.Column="1" />
+        <ComboBox Name="ComboBoxDoctor" Margin="444,260,34,324" Grid.Column="1" DropDownClosed="ComboBoxDoctor_OnDropDownClosed"/>
         <!--#endregion-->
 
         <!--#region DATAPICKER-->
@@ -62,15 +62,15 @@
       
 
         <TextBlock Grid.Row="0" FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Arial Black" Margin="140,0,0,534" Grid.Column="1"  >REGISTRO DE CITAS</TextBlock>
-        <DatePicker HorizontalAlignment="Left" Margin="44,271,0,0" VerticalAlignment="Top" Grid.Column="1" Width="178"/>
+        <DatePicker Name="DatePickerDia" HorizontalAlignment="Left" Margin="44,271,0,0" VerticalAlignment="Top" Grid.Column="1" Width="178" SelectedDateChanged="DatePickerDia_OnSelectedDateChanged"/>
         <ComboBox Margin="335,312,388,316" Grid.Column="1" />
         <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,479,0,0" Foreground="#FF121B40" Height="22" Width="135" Grid.Column="1"><Run Text="TIPO DE VISITA"/></TextBlock>
         <ComboBox Margin="95,124,160,504" />
-        <ComboBox Margin="213,314,266,270" Grid.Column="1" />
-        <ComboBox Margin="212,389,266,195" Grid.Column="1" />
-        <ComboBox Margin="212,468,266,116" Grid.Column="1" />
+        <ComboBox Name="ComboBoxHora" Margin="213,314,266,270" Grid.Column="1" DropDownClosed="ComboBoxHora_OnDropDownClosed"/>
+        <ComboBox Name="ComboBoxDuracion" Margin="212,389,266,195" Grid.Column="1" />
+        <ComboBox Name="ComboBoxTipoVisita" Margin="212,468,266,116" Grid.Column="1" />
         <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="100,542,0,0" Foreground="#FF121B40" Height="22" Width="83" Grid.Column="1"><Run Text="ESTADO"/></TextBlock>
-        <ComboBox Margin="212,537,266,47" Grid.Column="1" />
+        <ComboBox Name="ComboBoxEstado" Margin="212,537,266,47" Grid.Column="1" />
         <!--#endregion-->
 
 

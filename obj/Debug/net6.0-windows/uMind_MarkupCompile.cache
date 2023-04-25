@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 E:\github\EscritorioDef\App.xaml
-81732742698
+6-706958973
 
-23-552892496
+252053155404
 195-905296415
-BuscarPaciente.xaml;Login.xaml;MainWindow.xaml;ModificarCita.xaml;ModificarPaciente.xaml;PantallaDeCarga.xaml;RegistrarCita.xaml;RegistrarPaciente.xaml;
+BuscarPaciente.xaml;Login.xaml;MainWindow.xaml;PantallaDeCarga.xaml;RegistrarCita.xaml;RegistrarPaciente.xaml;
 
-False
+True
 

@@ -67,7 +67,7 @@
             </Border>
 
 
-            <TextBlock Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="8" FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Arial Black"  >REGISTRO DE PACIENTES</TextBlock>
+            <TextBlock Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="8" FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Arial Black"  ><Run Text="FICHA DE PACIENTE"/><LineBreak/><Run/></TextBlock>
             <!--#region TEXTBLOCK-->
             <TextBlock Grid.Column="3" Grid.Row="2" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="90,0,0,0" Foreground="#FF121B40" Height="22" Width="30">ID</TextBlock>
             <TextBlock Grid.Column="6" Grid.Row="2" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF121B40" Height="22" Width="178" >PSICÓLOGO ASIGNADO</TextBlock>

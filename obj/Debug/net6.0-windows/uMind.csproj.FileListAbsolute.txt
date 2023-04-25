@@ -125,7 +125,6 @@ E:\github\EscritorioDef\obj\Debug\net6.0-windows\BuscarPaciente.g.cs
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\Login.g.cs
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\MainWindow.g.cs
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\ModificarCita.g.cs
-E:\github\EscritorioDef\obj\Debug\net6.0-windows\ModificarPaciente.g.cs
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\PantallaDeCarga.g.cs
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\RegistrarCita.g.cs
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\RegistrarPaciente.g.cs
@@ -137,7 +136,6 @@ E:\github\EscritorioDef\obj\Debug\net6.0-windows\BuscarPaciente.baml
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\Login.baml
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\MainWindow.baml
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\ModificarCita.baml
-E:\github\EscritorioDef\obj\Debug\net6.0-windows\ModificarPaciente.baml
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\PantallaDeCarga.baml
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\RegistrarCita.baml
 E:\github\EscritorioDef\obj\Debug\net6.0-windows\RegistrarPaciente.baml

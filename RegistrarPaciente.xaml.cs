@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using uMind.Logica;
 using uMind.Model;
 using uMind.Service;
 
@@ -12,16 +15,53 @@ namespace uMind
     public partial class RegistrarPaciente : Window
     {
         private List<Doctor> doctores;
+        private MainWindow mainWindow;
 
-        public RegistrarPaciente()
+        public RegistrarPaciente(MainWindow mainWindow)
         {
             InitializeComponent();
+
+            this.mainWindow = mainWindow;
 
             getDoctors();
             setSexo();
         }
 
-        private async void getDoctors()
+        public RegistrarPaciente(Paciente paciente, MainWindow mainWindow)
+        {
+			InitializeComponent();
+
+            this.mainWindow = mainWindow;
+			
+			setSexo();
+            setPaciente(paciente);
+        }
+
+        private async void setPaciente(Paciente paciente)
+        {
+            TextID.Text = paciente.id.ToString();
+            TextNombre.Text = paciente.nombre;
+            TextApellidos.Text = paciente.apellidos;
+            TextTelefono.Text = paciente.telefono;
+            TextCorreo.Text = paciente.email;
+            TextPoblacion.Text = paciente.poblacion;
+            ComboBoxSexo.Text = paciente.sexo;
+            DatePickerNacimiento.Text = paciente.fechaNacimiento;
+            DatePickerAlta.Text = paciente.fechaAlta;
+
+            await getDoctors();
+
+			for (int i = 0; i < doctores.Count; i++)
+            {
+	            if (doctores[i].id == paciente.doctor.id)
+	            {
+					ComboBoxDoctor.SelectedIndex = i;
+					break;
+				}
+			}
+        }
+
+        private async Task getDoctors()
         {
 	        doctores = await DoctorService.getDoctors();
 
@@ -44,27 +84,47 @@ namespace uMind
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (TextNombre.Text == "" || TextApellidos.Text == "" || TextTelefono.Text == "" ||
-                TextCorreo.Text == "" || DatePickerAlta.Text == "" || DatePickerNacimiento.Text == "" ||
-                ComboBoxDoctor.SelectedIndex == -1 || ComboBoxSexo.SelectedIndex == -1) return;
+	        guardarCita();
+        }
 
-            Paciente paciente = new Paciente();
-            paciente.nombre = TextNombre.Text;
-            paciente.apellidos = TextApellidos.Text;
-            paciente.telefono = TextTelefono.Text;
-            paciente.email = TextCorreo.Text;
-            paciente.poblacion = TextPoblacion.Text;
-            paciente.sexo = ComboBoxSexo.Text;
-            paciente.fechaAlta = DatePickerAlta.Text;
+        private async void guardarCita()
+        {
+	        if (TextNombre.Text == "" || TextApellidos.Text == "" || TextTelefono.Text == "" ||
+	            TextCorreo.Text == "" || DatePickerAlta.Text == "" || DatePickerNacimiento.Text == "" ||
+	            ComboBoxDoctor.SelectedIndex == -1 || ComboBoxSexo.SelectedIndex == -1)
+	        {
+		        MessageBox.Show("Rellena todos los campos");
+		        return;
+	        }
+
+	        Paciente paciente = new Paciente();
+	        paciente.id = TextID.Text == "" ? 0 : int.Parse(TextID.Text);
+	        paciente.nombre = TextNombre.Text;
+	        paciente.apellidos = TextApellidos.Text;
+	        paciente.telefono = TextTelefono.Text;
+	        paciente.email = TextCorreo.Text;
+	        paciente.poblacion = TextPoblacion.Text;
+	        paciente.sexo = ComboBoxSexo.Text;
+
+	        //paciente.fechaNacimiento = DatePickerNacimiento.DisplayDate.ToString("yyyy-MM-dd");
+	        //paciente.fechaAlta = DatePickerAlta.DisplayDate.ToString("yyyy-MM-dd");
+
+            paciente.fechaNacimiento = Fechas.cambiarFormato(DatePickerNacimiento.Text);
+            paciente.fechaAlta = Fechas.cambiarFormato(DatePickerAlta.Text);
+
             paciente.doctor = doctores[ComboBoxDoctor.SelectedIndex];
 
-            string pattern = "dd/MM/yyyy";
-            DateTime fechaNacimiento = DateTime.ParseExact(paciente.fechaNacimiento, pattern, null);
-            DateTime fechaAlta = DateTime.ParseExact(paciente.fechaAlta, pattern, null);
-            paciente.fechaNacimiento = fechaNacimiento.ToString("yyyy-MM-dd");
-            paciente.fechaAlta = fechaAlta.ToString("yyyy-MM-dd");
-
-            PacienteService.savePaciente(paciente);
+	        try
+	        {
+		        await PacienteService.savePaciente(paciente);
+		        MessageBox.Show("Paciente registrado");
+		        this.Close();
+		        mainWindow.getPacientesAsync();
+	        }
+	        catch (Exception e)
+	        {
+		        MessageBox.Show("Error al registrar el Paciente: \n"+e);
+	        }
         }
     }
 }

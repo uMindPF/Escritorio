@@ -15,7 +15,7 @@ namespace uMind
 
         private List<Doctor> doctores;
         private List<Paciente> pacientes;
-        private List<Citas> citas;
+        private List<Cita> citas;
 
         public MainWindow()
         {
@@ -40,14 +40,26 @@ namespace uMind
 
         private void btnRegistrar_Click_1(object sender, RoutedEventArgs e)
         {
-            RegistrarPaciente registrarPaciente = new RegistrarPaciente();
+            RegistrarPaciente registrarPaciente = new RegistrarPaciente(this);
             registrarPaciente.ShowDialog();
         }
 
         private void btnModificarCita_Click(object sender, RoutedEventArgs e)
         {
-            ModificarCita modificarCita = new ModificarCita();
-            modificarCita.ShowDialog();
+	        Button button = (Button)sender;
+
+	        var data = dataGridCitas.SelectedItem;
+	        int id = (int)data.GetType().GetProperty("IdCita").GetValue(data, null);
+
+	        foreach (var cita in citas)
+	        {
+		        if (cita.id == id)
+		        {
+					RegistrarCita modificarCita = new RegistrarCita(cita);
+					modificarCita.ShowDialog();
+			        break;
+		        }
+	        }
         }
 
         private void btnMinimizar_Click(object sender, RoutedEventArgs e)
@@ -64,6 +76,14 @@ namespace uMind
             {
                 return;
             }
+
+            if (selectedIndex == 0)
+            {
+                getCitasAsync();
+                return;
+            }
+
+            selectedIndex--;
 
             var citas = await CitaService.getCitasDoctor(doctores[selectedIndex].id);
             dataGridCitas.Items.Clear();
@@ -104,24 +124,25 @@ namespace uMind
         {
             doctores = await DoctorService.getDoctors();
             cbPsicologo.Items.Clear();
+            cbPsicologo.Items.Add("Todos");
 
             if (doctores == null)
             {
-                return;
+	            return;
             }
 
             try
             {
                 foreach (var doctor in doctores)
                 {
-                    cbPsicologo.Items.Add(doctor.nombre);
+	                cbPsicologo.Items.Add(doctor.nombre);
                 }
             }
             catch (Exception ex)
             { }
         }
 
-        private async void getCitasAsync()
+        public async void getCitasAsync()
         {
 
 	        citas = await CitaService.getCitas();
@@ -137,20 +158,20 @@ namespace uMind
 
         }
 
-        private async void getPacientesAsync()
+        public async void getPacientesAsync()
         {
             pacientes = await PacienteService.getPacientes();
             dataGridPacientes2.Items.Clear();
 
             if (pacientes == null)
             {
-                return;
+	            return;
             }
 
             displayPacientes(pacientes);
         }
 
-        private void displayCitas(List<Citas> citas)
+        private void displayCitas(List<Cita> citas)
         {
 	        try
             {
@@ -280,8 +301,20 @@ namespace uMind
 
         private void btnModificarPaciente_Click(object sender, RoutedEventArgs e)
         {
-            ModificarPaciente modificarPaciente = new ModificarPaciente();
-            modificarPaciente.ShowDialog();
+            Button button = (Button) sender;
+
+            var data = dataGridPacientes2.SelectedItem;
+            int id = (int)data.GetType().GetProperty("Id").GetValue(data, null);
+
+            foreach (var paciente in pacientes)
+            {
+	            if (paciente.id == id)
+	            {
+		            RegistrarPaciente modificarPaciente = new RegistrarPaciente(paciente, this);
+					modificarPaciente.ShowDialog();
+					break;
+				}
+			}
         }
 
         private void dateForward (object sender, RoutedEventArgs e)

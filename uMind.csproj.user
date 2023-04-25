@@ -16,9 +16,6 @@
     <Compile Update="ModificarCita.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ModificarPaciente.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="PantallaDeCarga.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,9 +37,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ModificarCita.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="ModificarPaciente.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PantallaDeCarga.xaml">
