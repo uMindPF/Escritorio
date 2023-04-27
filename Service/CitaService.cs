@@ -83,29 +83,34 @@ namespace uMind.Service
 
         public static async Task<List<Cita>> getCitasDoctorDate(int idDoctor, DateTime date)
         {
-			try
-			{
-				string token = await TokenService.getToken();
-				HttpClient client = new HttpClient();
-				client.DefaultRequestHeaders.Add("Authorization", token);
+	        try
+	        {
+		        string token = await TokenService.getToken();
+		        HttpClient client = new HttpClient();
+		        client.DefaultRequestHeaders.Add("Authorization", token);
 
-				Data sendData = new Data();
+		        Data sendData = new Data();
 
-                sendData.id = idDoctor;
-                sendData.date = date.ToString("yyyy-MM-dd");
+		        sendData.id = idDoctor;
+		        sendData.date = date.ToString("yyyy-MM-dd");
 
-				string json = JsonSerializer.Serialize(sendData);
-				StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+		        string json = JsonSerializer.Serialize(sendData);
+		        StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
-				using HttpResponseMessage response = await client.PostAsync(ConnectionInfo.URL_API + "/consultas/citas/dateDoctor", content);
+		        using HttpResponseMessage response =
+			        await client.PostAsync(ConnectionInfo.URL_API + "/consultas/citas/dateDoctor", content);
 
-				if (response.IsSuccessStatusCode)
-				{
-					return JsonSerializer.Deserialize<List<Cita>>(await response.Content.ReadAsStringAsync());
-				}
+		        if (response.IsSuccessStatusCode)
+		        {
+			        MessageBox.Show(await response.Content.ReadAsStringAsync());
+			        return JsonSerializer.Deserialize<List<Cita>>(await response.Content.ReadAsStringAsync());
+		        }
 
-			}
-			catch (Exception exception) { }
+	        }
+	        catch (Exception exception)
+	        {
+		        MessageBox.Show("a");
+	        }
 
 			return null;
 		}

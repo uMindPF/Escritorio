@@ -13,12 +13,15 @@ namespace uMind
     /// </summary>
     public partial class BuscarPaciente : Window
     {
+        private MainWindow mainWindow;
+
         private List<Paciente> pacientes;
 
-        public BuscarPaciente()
+        public BuscarPaciente(MainWindow main)
         {
             InitializeComponent();
 
+            mainWindow = main;
             cargarPacientes();
         }
 
@@ -65,7 +68,7 @@ namespace uMind
             {
 	            if (paciente.id == id)
 	            {
-		            RegistrarCita registarCita = new RegistrarCita(paciente);
+		            RegistrarCita registarCita = new RegistrarCita(paciente, mainWindow);
 					registarCita.ShowDialog();
 				}
             }

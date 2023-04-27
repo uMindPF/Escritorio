@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using Dragablz;
 using uMind.Model;
 using uMind.Service;
 
@@ -34,7 +35,7 @@ namespace uMind
 
         private void btnRegistrarCita_Click(object sender, RoutedEventArgs e)
         {
-	        BuscarPaciente buscarPacientes = new BuscarPaciente();
+	        BuscarPaciente buscarPacientes = new BuscarPaciente(this);
             buscarPacientes.ShowDialog();
         }
 
@@ -55,7 +56,7 @@ namespace uMind
 	        {
 		        if (cita.id == id)
 		        {
-					RegistrarCita modificarCita = new RegistrarCita(cita);
+					RegistrarCita modificarCita = new RegistrarCita(cita, this);
 					modificarCita.ShowDialog();
 			        break;
 		        }

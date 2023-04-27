@@ -78,7 +78,7 @@ namespace uMind
 		        if (ComboBoxDoctor.SelectedIndex != -1)
 		        {
 					doctor = doctors[ComboBoxDoctor.SelectedIndex];
-				}
+		        }
 
 		        if (date == null || doctor == null)
 		        {
