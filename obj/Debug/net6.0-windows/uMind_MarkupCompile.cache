@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-E:\github\EscritorioDef\obj\Debug\net6.0-windows\
+E:\Github\repos\uMindPF_02\Escritorio\obj\Debug\net6.0-windows\
 uMind
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-E:\github\EscritorioDef\App.xaml
+E:\Github\repos\uMindPF_02\Escritorio\App.xaml
 6-706958973
 
 252053155404
-195-905296415
+1961866763864
 BuscarPaciente.xaml;Login.xaml;MainWindow.xaml;PantallaDeCarga.xaml;RegistrarCita.xaml;RegistrarPaciente.xaml;
 
 False

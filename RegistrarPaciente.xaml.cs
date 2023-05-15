@@ -1,11 +1,19 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.Pipes;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using uMind.Logica;
 using uMind.Model;
 using uMind.Service;
+using System.IO;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
+
 
 namespace uMind
 {
@@ -125,6 +133,131 @@ namespace uMind
 	        {
 		        MessageBox.Show("Error al registrar el Paciente: \n"+e);
 	        }
+        }
+
+        private void exportData()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivo de Word|*.docx";
+            saveFileDialog.Title = "Exportar datos";
+            saveFileDialog.ShowDialog();
+
+            if (saveFileDialog.FileName != "")
+            {
+                using (WordprocessingDocument wordDocument = WordprocessingDocument.Create(saveFileDialog.FileName, WordprocessingDocumentType.Document))
+                {
+                    /*
+                    MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
+                    mainPart.Document = new Document();
+                    Body body = mainPart.Document.AppendChild(new Body());
+                    StyleDefinitionsPart styleDefinitionsPart = mainPart.AddNewPart<StyleDefinitionsPart>();
+                    styleDefinitionsPart.Styles = new Styles();
+
+                    Paragraph titleParagraph = body.AppendChild(new Paragraph());
+                    titleParagraph.ParagraphProperties = new ParagraphProperties(new ParagraphStyleId() { Val = "Title" });
+                    titleParagraph.AppendChild(new Run(new Text("Registros del paciente " + TextNombre.Text)));
+
+                    Paragraph paragraph = body.AppendChild(new Paragraph());
+
+                    Run runId = paragraph.AppendChild(new Run());
+                    runId.AppendChild(new Text("ID del paciente: "));
+                    Run runIdValor = paragraph.AppendChild(new Run());
+                    runIdValor.AppendChild(new Text(TextID.Text));
+
+                    Paragraph paragraph2 = body.AppendChild(new Paragraph());
+
+                    Run runNombre = paragraph2.AppendChild(new Run());
+                    runNombre.AppendChild(new Text("Nombre del paciente: "));
+                    Run runNombreValor = paragraph2.AppendChild(new Run());
+                    runNombreValor.AppendChild(new Text(TextNombre.Text));
+
+                    Paragraph paragraph3 = body.AppendChild(new Paragraph());
+
+                    Run runApellidos = paragraph3.AppendChild(new Run());
+                    runApellidos.AppendChild(new Text("Apellidos del paciente: "));
+                    Run runApellidosValor = paragraph3.AppendChild(new Run());
+                    runApellidosValor.AppendChild(new Text(TextApellidos.Text));
+
+                    Paragraph paragraph4 = body.AppendChild(new Paragraph());
+
+                    Run runTelefono = paragraph4.AppendChild(new Run());
+                    runTelefono.AppendChild(new Text("Teléfono del paciente: "));
+                    Run runTelefonoValor = paragraph4.AppendChild(new Run());
+                    runTelefonoValor.AppendChild(new Text(TextTelefono.Text));
+
+                    Paragraph paragraph5 = body.AppendChild(new Paragraph());
+
+                    Run runCorreo = paragraph5.AppendChild(new Run());
+                    runCorreo.AppendChild(new Text("Correo electrónico del paciente: "));
+                    Run runCorreoValor = paragraph5.AppendChild(new Run());
+                    runCorreoValor.AppendChild(new Text(TextCorreo.Text));
+
+                    Paragraph paragraph6 = body.AppendChild(new Paragraph());
+
+                    Run runPoblacion = paragraph6.AppendChild(new Run());
+                    runPoblacion.AppendChild(new Text("Población del paciente: "));
+                    Run runPoblacionValor = paragraph6.AppendChild(new Run());
+                    runPoblacionValor.AppendChild(new Text(TextPoblacion.Text));
+
+                    Paragraph paragraph7 = body.AppendChild(new Paragraph());
+
+                    Run runSexo = paragraph7.AppendChild(new Run());
+                    runSexo.AppendChild(new Text("Sexo del paciente: "));
+                    Run runSexoValor = paragraph7.AppendChild(new Run());
+                    runSexoValor.AppendChild(new Text(ComboBoxSexo.Text));
+
+                    wordDocument.Close();
+                    */
+                    
+                    MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
+                    mainPart.Document = new Document();
+                    Body body = mainPart.Document.AppendChild(new Body());
+
+                    // Agregar estilos
+                    StyleDefinitionsPart styleDefinitionsPart = mainPart.AddNewPart<StyleDefinitionsPart>();
+                    styleDefinitionsPart.Styles = new Styles();
+
+                    // Título
+                    Paragraph titleParagraph = body.AppendChild(new Paragraph());
+                    Run titleRun = titleParagraph.AppendChild(new Run(new Text("Registros del paciente " + TextNombre.Text)));
+                    RunProperties titleRunProperties = titleRun.RunProperties ?? new RunProperties();
+                    titleRunProperties.Bold = new Bold();
+                    titleRunProperties.FontSize = new FontSize() { Val = "48" };
+                    titleRun.RunProperties = titleRunProperties; 
+                    RunFonts titleRunFonts = new RunFonts() { Ascii = "Bahnschrift" };
+                    titleRunProperties.Append(titleRunFonts);
+
+                    // Datos del paciente
+                    AddDataParagraph(body, "ID del paciente: ", TextID.Text);
+                    AddDataParagraph(body, "Nombre del paciente: ", TextNombre.Text);
+                    AddDataParagraph(body, "Apellidos del paciente: ", TextApellidos.Text);
+                    AddDataParagraph(body, "Teléfono del paciente: ", TextTelefono.Text);
+                    AddDataParagraph(body, "Correo electrónico del paciente: ", TextCorreo.Text);
+                    AddDataParagraph(body, "Población del paciente: ", TextPoblacion.Text);
+                    AddDataParagraph(body, "Sexo del paciente: ", ComboBoxSexo.Text);
+
+                    wordDocument.Close();
+                }
+            }
+        }
+
+        private void AddDataParagraph(Body body, string labelText, string valueText)
+        {
+            Paragraph paragraph = body.AppendChild(new Paragraph());
+            paragraph.AppendChild(new Run(new Text(labelText))
+            {
+                RunProperties = new RunProperties(new Bold() { Val = true }, new Color() { Val = "2E74B5" })
+            });
+
+            paragraph.ParagraphProperties = new ParagraphProperties(new SpacingBetweenLines() { After = "0" });
+            paragraph.ParagraphProperties.Append(new RunFonts() { Ascii = "Bahnschrift" });
+
+            paragraph.AppendChild(new Run(new Text(valueText)));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            exportData();
         }
     }
 }
