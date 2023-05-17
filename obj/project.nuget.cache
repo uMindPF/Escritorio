@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "RQ0Lp5oxFkFxNw0I9OPBFt5U83P4L4vokjbJXy9/G5oBo63SdzPfg8Lyv3Z7vUcqxob6RI6m97RPYfH8y02Fvg==",
+  "dgSpecHash": "N/fCLMq78YvG7NO/99G/kBOIMWQWFDXoCsvvRKqyd17MMsL2l8BlI8fXnEUx+QtrJqSn4kN75Tfl7MzRz+rMcw==",
   "success": true,
-  "projectFilePath": "E:\\Github\\repos\\uMindPF_02\\Escritorio\\uMind.csproj",
+  "projectFilePath": "C:\\Users\\MarionaGuaCam.DAM-21\\source\\repos\\uMind.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\alejandromarrod\\.nuget\\packages\\documentformat.openxml\\2.20.0\\documentformat.openxml.2.20.0.nupkg.sha512",
-    "C:\\Users\\alejandromarrod\\.nuget\\packages\\dragablz\\0.0.3.234\\dragablz.0.0.3.234.nupkg.sha512",
-    "C:\\Users\\alejandromarrod\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
+    "C:\\Users\\MarionaGuaCam.DAM-21\\.nuget\\packages\\documentformat.openxml\\2.20.0\\documentformat.openxml.2.20.0.nupkg.sha512",
+    "C:\\Users\\MarionaGuaCam.DAM-21\\.nuget\\packages\\dragablz\\0.0.3.234\\dragablz.0.0.3.234.nupkg.sha512",
+    "C:\\Users\\MarionaGuaCam.DAM-21\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -61,23 +61,23 @@
             Grid.Row="1"
             Width="348"
             Height="33"
-            Margin="298,0,0,0"
             Padding="40,5,0,0"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             BorderBrush="#FFC1D2EA"
             BorderThickness="0,0,0,3"
-            FontFamily="Segoe UI"
+            FontFamily="Candara"
             FontSize="18"
             FontStyle="Normal"
             FontWeight="Bold"
             Foreground="White"
             TextAlignment="Left">
             <TextBox.Background>
-                <ImageBrush
-                    AlignmentX="Left"
-                    ImageSource="Imagenes/usuario.png"
-                    Stretch="Uniform" />
+                <ImageBrush ImageSource="Imagenes/usuario.png" AlignmentX="Left" Stretch="Uniform">
+                    <ImageBrush.Viewbox>
+                        <Rect X="0" Y="0" Width="1.2" Height="1.2"/>
+                    </ImageBrush.Viewbox>
+                </ImageBrush>
             </TextBox.Background>
         </TextBox>
         <PasswordBox
@@ -85,23 +85,23 @@
             Grid.Row="2"
             Width="348"
             Height="33"
-            Margin="298,0,0,0"
             Padding="40,5,0,0"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             VerticalAlignment="Center"
             BorderBrush="#FFC1D2EA"
             BorderThickness="0,0,0,3"
-            FontFamily="Segoe UI"
+            FontFamily="Candara"
             FontSize="18"
             FontStyle="Normal"
             FontWeight="Bold"
             Foreground="White"
             HorizontalContentAlignment="Left">
             <PasswordBox.Background>
-                <ImageBrush
-                    AlignmentX="Left"
-                    ImageSource="Imagenes/contrasena.png"
-                    Stretch="Uniform" />
+                <ImageBrush ImageSource="Imagenes/contrasena.png" AlignmentX="Left" Stretch="Uniform">
+                    <ImageBrush.Viewbox>
+                        <Rect X="0" Y="0" Width="1.2" Height="1.2"/>
+                    </ImageBrush.Viewbox>
+                </ImageBrush>
             </PasswordBox.Background>
         </PasswordBox>
 
@@ -120,15 +120,30 @@
         <Button
             Name="btnEntrar"
             Grid.Row="3"
-            Margin="394,38,350,0"
-            Background="#FFA2C0EA"
+            Margin="372,38,372,0"
+            Background="#FF050B65"
             BorderBrush="{x:Null}"
             Click="btnEntrar_Click"
-            FontFamily="Bahnschrift SemiBold"
+            FontFamily="Candara"
             FontSize="18"
             FontWeight="Bold"
-            Foreground="#FF002E9E">
+            
+            Foreground="#FFFBFBFB"
+            >
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Margin="8"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
             ENTRAR
+
         </Button>
         <Image
             Grid.Row="4"

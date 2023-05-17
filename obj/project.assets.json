@@ -414,23 +414,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alejandromarrod\\.nuget\\packages\\": {},
+    "C:\\Users\\MarionaGuaCam.DAM-21\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Github\\repos\\uMindPF_02\\Escritorio\\uMind.csproj",
+      "projectUniqueName": "C:\\Users\\MarionaGuaCam.DAM-21\\source\\repos\\uMind.csproj",
       "projectName": "uMind",
-      "projectPath": "E:\\Github\\repos\\uMindPF_02\\Escritorio\\uMind.csproj",
-      "packagesPath": "C:\\Users\\alejandromarrod\\.nuget\\packages\\",
-      "outputPath": "E:\\Github\\repos\\uMindPF_02\\Escritorio\\obj\\",
+      "projectPath": "C:\\Users\\MarionaGuaCam.DAM-21\\source\\repos\\uMind.csproj",
+      "packagesPath": "C:\\Users\\MarionaGuaCam.DAM-21\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MarionaGuaCam.DAM-21\\source\\repos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\alejandromarrod\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MarionaGuaCam.DAM-21\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -485,7 +485,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

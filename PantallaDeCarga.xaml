@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="PantallaDeCarga" Height="450" Width="900" Background="Transparent" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="{x:Null}">
     <Grid>
-        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="6"  BorderThickness="3">
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="6"  >
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#FF9DDEB0" Offset="0"></GradientStop>
@@ -22,6 +22,6 @@
                 <ImageBrush ImageSource="Imagenes/logoCompletoBlanco.png" Stretch="Uniform"></ImageBrush>
             </Border.Background>
         </Border>
-        <ProgressBar Name="progressbar" Grid.Column="0" Margin="215,381,215,42" Foreground="#FF6CABE6"/>
+        <ProgressBar Name="progressbar" Grid.Column="0" Margin="226,393,226,42" Foreground="#FF6CABE6"/>
     </Grid>
 </Window>

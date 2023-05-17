@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1400" Background="#97B5DD" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
     <Grid>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="53*"/>
             <ColumnDefinition Width="647*"/>
@@ -69,25 +70,23 @@
                         </LinearGradientBrush>
                     </Border.Background>
                     <Canvas Margin="0,10,10,0" HorizontalAlignment="Right" Width="1271">
-                        <TextBlock Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="8" FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Arial Black" Canvas.Left="245" Canvas.Top="32"  >REGISTRO DE CITAS</TextBlock>
-                        <DatePicker Name="datePickerCita" Canvas.Left="614" Canvas.Top="126" HorizontalAlignment="Center" VerticalAlignment="Top" Width="214" SelectedDateChanged="changeSelectedDate">
-
-                        </DatePicker>
-                        <Button Canvas.Left="575" Canvas.Top="123" BorderBrush="{x:Null}" Background="{x:Null}" Click="dateForward ">
+                        <TextBlock Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="8" FontWeight="Bold" FontSize="36" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Segoe UI Black" Canvas.Left="245" Canvas.Top="32"  >REGISTRO DE CITAS</TextBlock>
+                        <DatePicker Name="datePickerCita" Canvas.Left="614" Canvas.Top="126" HorizontalAlignment="Center" VerticalAlignment="Top" Width="214" SelectedDateChanged="changeSelectedDate" FontWeight="Normal" Background="#FF53AAD8"/>
+                        <Button Canvas.Left="575" Canvas.Top="123" BorderBrush="{x:Null}" Background="{x:Null}" Click="dateBackward">
                             <Image Source="Imagenes/anterior.png" Height="34" Canvas.Top="123" Width="30" Canvas.Left="555" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                         </Button>
 
-                        <Button Canvas.Left="833" Canvas.Top="122" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top" Click="dateBackward">
+                        <Button Canvas.Left="833" Canvas.Top="122" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top" Click="dateForward ">
                             <Image Height="34" Canvas.Left="849" Canvas.Top="123" Width="30" Source="Imagenes/siguiente.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                         </Button>
 
 
                         <Button Name="btnRegistrarCita" Click="btnRegistrarCita_Click"  Height="52" Canvas.Left="1150" Canvas.Top="112" Background="{x:Null}" Width="47" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{x:Null}">
-                            <Image Height="45" Canvas.Left="1061" Canvas.Top="116" Width="46" Source="Imagenes/nuevo-documento.png"/>
+                            <Image Height="45" Canvas.Left="1061" Canvas.Top="116" Width="54" Source="Imagenes/nuevo-documento.png"/>
                         </Button>
 
                         <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF0D1771" Height="22" Width="92" Canvas.Left="245" Canvas.Top="130">PSICÓLOGO</TextBlock>
-                        <ComboBox Name="cbPsicologo" Canvas.Left="354" Canvas.Top="127" Width="176" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="changeSelectedDoctor"/>
+                        <ComboBox Name="cbPsicologo" Canvas.Left="354" Canvas.Top="127" Width="176" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="changeSelectedDoctor" FontWeight="Normal"/>
                         <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}"  CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}"    Name="dataGridCitas" FrozenColumnCount="3"  Height="354" Canvas.Left="245" Canvas.Top="186" HorizontalAlignment="Left" VerticalAlignment="Top" Width="952"  Background="#FF498384" >
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn HeaderStyle="{StaticResource HeaderStyle}" Header="#" IsReadOnly="True" Width="auto">
@@ -104,14 +103,14 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn Header="Id cita" Binding="{Binding IdCita}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
-                                <DataGridTextColumn Header="Id pacientes" Binding="{Binding IdPaciente}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
-                                <DataGridTextColumn Header="Nombre" Binding="{Binding NombrePaciente}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
-                                <DataGridTextColumn Header="Psicólogo" Binding="{Binding Psicologo}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
-                                <DataGridTextColumn Header="Dia" Binding="{Binding Dia}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
-                                <DataGridTextColumn Header="Hora" Binding="{Binding Hora}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
-                                <DataGridTextColumn Header="Estado" Binding="{Binding Estado}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
-                                <DataGridTextColumn Header="Tipo visita" Binding="{Binding TipoVisita}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
+                                <DataGridTextColumn Header="    Id cita    " Binding="{Binding IdCita}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
+                                <DataGridTextColumn Header="    Id pacientes    " Binding="{Binding IdPaciente}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
+                                <DataGridTextColumn Header="    Nombre    " Binding="{Binding NombrePaciente}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
+                                <DataGridTextColumn Header="    Psicólogo    " Binding="{Binding Psicologo}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
+                                <DataGridTextColumn Header="    Dia    " Binding="{Binding Dia}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
+                                <DataGridTextColumn Header="    Hora    " Binding="{Binding Hora}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
+                                <DataGridTextColumn Header="    Estado    " Binding="{Binding Estado}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
+                                <DataGridTextColumn Header="    Tipo visita    " Binding="{Binding TipoVisita}" HeaderStyle="{StaticResource HeaderStyle}" IsReadOnly="True" Width="Auto"/>
 
                             </DataGrid.Columns>
                         </DataGrid>
@@ -121,7 +120,7 @@
 
 
             </TabItem>
-            <TabItem Header="              HISTORIA PACIENTES" Height="75" VerticalAlignment="Top" HorizontalAlignment="Left"  Width="250" BorderBrush="{x:Null}" FontWeight="Bold" Foreground="#FF0C1486" TabIndex="2147483645" FontSize="16" Margin="2,5,0,0">
+            <TabItem Header="              HISTORIA PACIENTES" Height="75" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Width="250" BorderBrush="{x:Null}" FontWeight="Bold" Foreground="#FF0C1486" TabIndex="2147483645" FontSize="16" Margin="2,0,0,-5">
                 <Grid Margin="0,0,0,-8">
                     <Border>
                         <Border.Background>
@@ -136,7 +135,7 @@
 
                     </Border>
 
-                    <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}"  CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}"   Name="dataGridPacientes2" FrozenColumnCount="3"  Height="354" Canvas.Left="245" Canvas.Top="186" HorizontalAlignment="Left" VerticalAlignment="Top" Width="952"  Background="#FF498384" Margin="108,242,0,0" >
+                    <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}"  CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}"   Name="dataGridPacientes2" FrozenColumnCount="3" Height="354" Canvas.Left="245" Canvas.Top="186" HorizontalAlignment="Left" VerticalAlignment="Top" Width="952"  Background="#FF498384" Margin="101,225,0,0" >
 
                         <DataGrid.Columns>
                             <DataGridTemplateColumn HeaderStyle="{StaticResource HeaderStyle}" Header="#" IsReadOnly="True" Width="auto">
@@ -144,10 +143,10 @@
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
                                             <Button Name="btnModificarPaciente"  Click="btnModificarPaciente_Click"  Background="#FFA57509" >
-                                                <Image  Source="Imagenes/boton-editar.png"  Width="16" Height="16"/>
+                                                <Image  Source="Imagenes/modificar.png"  Width="20" Height="20"/>
                                             </Button>
                                             <Button Margin="5 0 0 0" Click="deletePaciente" Background="Red" >
-                                                <Image Source="Imagenes/salir.png" Width="16" Height="16" />
+                                                <Image Source="Imagenes/salir.png" Width="20" Height="20" />
                                             </Button>
                                         </StackPanel>
                                     </DataTemplate>
@@ -173,7 +172,7 @@
                     <TextBlock  FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="428,156,0,0" Foreground="#FF0D1771" Height="22" Width="70" >NOMBRE</TextBlock>
                     <TextBox Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="34" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="520,144,0,0" TextChanged="nombrePaciente"/>
                     <TextBox Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="33" Width="105"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="163,145,0,0" TextChanged="idPaciente"/>
-                    <TextBlock FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Arial Black" Canvas.Left="245" Canvas.Top="32" Margin="108,0,0,588"  >LISTADO DE PACIENTES</TextBlock>
+                    <TextBlock FontWeight="Bold" FontSize="36" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Segoe UI Black" Canvas.Left="245" Canvas.Top="32" Margin="108,0,0,570"  >LISTADO DE PACIENTES</TextBlock>
 
                     <Button Height="52" Width="47" Name="btnRegistrar" Click="btnRegistrar_Click_1" Background="{x:Null}" BorderBrush="{x:Null}" Margin="993,135,108,477">
                         <Image Source="Imagenes/nuevo-documento.png"/>
@@ -182,29 +181,10 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="                                                PERFIL" Height="75" VerticalAlignment="Top" HorizontalAlignment="Center"   Width="250" BorderBrush="{x:Null}" FontWeight="Bold" Foreground="#FF0C1486" Margin="0,3,0,0">
-                <Border>
-                    <Border.BorderBrush>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
-
-
-                        </LinearGradientBrush>
-                    </Border.BorderBrush>
-
-                    <Border.Background>
-                        <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
-                            <GradientStop Color="#FF7FC5C7" Offset="0.25"></GradientStop>
-                            <GradientStop Color="#FF778AD4" Offset="0.75"></GradientStop>
-                            <GradientStop Color="#FF6AE4E1" Offset="0.25"></GradientStop>
-                        </LinearGradientBrush>
-                    </Border.Background>
-
-                </Border>
-            </TabItem>
 
         </TabControl>
 
-        <Image  Margin="23,236,38,514" RenderTransformOrigin="0.5,0.5" Source="Imagenes/pacientes.png">
+        <Image  Margin="30,246,31,504" RenderTransformOrigin="0.5,0.5" Source="Imagenes/pacientes.png">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -214,7 +194,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Image  Margin="30,173,41,592" RenderTransformOrigin="0.5,0.5" Source="Imagenes/calendario.png">
+        <Image  Margin="37,176,34,589" RenderTransformOrigin="0.5,0.5" Source="Imagenes/calendario.png">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -224,5 +204,17 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <Button HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Height="37" Width="38">
+            <Image Height="35" Canvas.Left="849" Canvas.Top="123" Width="29" Source="/cerrar-sesion.png" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-180.287"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Button>
     </Grid>
 </Window>

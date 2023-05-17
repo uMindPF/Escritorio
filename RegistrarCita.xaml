@@ -12,7 +12,7 @@
             <ColumnDefinition Width="241*"/>
         </Grid.ColumnDefinitions>
         <Border Margin="0,0,-101,0" Grid.ColumnSpan="2" BorderThickness="3" BorderBrush="White" >
-            
+
             <Border.Background>
                 <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
                     <GradientStop Color="#FF7FC5C7" Offset="0.25"></GradientStop>
@@ -30,11 +30,11 @@
         <TextBlock  FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF121B40" Height="22" Width="178" Margin="246,271,0,0" Grid.Column="1" >PSICÓLOGO ASIGNADO</TextBlock>
 
         <TextBlock  FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,160,0,0" Foreground="#FF121B40" Height="20" Width="174" Grid.Column="1" >NOMBRE COMPLETO</TextBlock>
-       
+
 
         <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="225,271,0,0" Foreground="#FF121B40" Height="21" Width="84" Grid.ColumnSpan="2">DÍA</TextBlock>
-        <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="113,324,0,0" Foreground="#FF121B40" Height="20" Width="80" Grid.Column="1">HORA</TextBlock>
-        <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="83,400,0,0" Foreground="#FF121B40" Height="22" Width="100" Grid.Column="1">DURACIÓN</TextBlock>
+        <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="129,324,0,0" Foreground="#FF121B40" Height="20" Width="80" Grid.Column="1">HORA</TextBlock>
+        <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="91,396,0,0" Foreground="#FF121B40" Height="22" Width="100" Grid.Column="1">DURACIÓN</TextBlock>
 
         <!--#endregion-->
 
@@ -45,7 +45,7 @@
         <!--#endregion-->
 
         <!--#region COMBOBOX-->
-        <ComboBox Name="ComboBoxDoctor" Margin="444,260,34,324" Grid.Column="1" DropDownClosed="ComboBoxDoctor_OnDropDownClosed"/>
+        <ComboBox Name="ComboBoxDoctor" Margin="444,266,50,330" Grid.Column="1" DropDownClosed="ComboBoxDoctor_OnDropDownClosed" FontFamily="Segoe UI" FontSize="16"/>
         <!--#endregion-->
 
         <!--#region DATAPICKER-->
@@ -53,24 +53,37 @@
 
         <!--#region BOTONES-->
 
-        <Button Name="Guardar" Click="Guardar_Click" Foreground="#FF002E9E" FontFamily="Bahnschrift SemiBold" FontWeight="Bold" FontSize="16" BorderBrush="{x:Null}" Background="#FFA2C0EA" Margin="518,553,66,41" Grid.Column="1">GUARDAR
+        <Button Name="Guardar" Click="Guardar_Click" Foreground="White" FontFamily="Bahnschrift SemiBold" FontWeight="Bold" FontSize="14" BorderBrush="{x:Null}" Background="#FF0B4554" Margin="509,538,98,56" Grid.Column="1">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Margin="8"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            GUARDAR
 
         </Button>
-        <Button Name="btnAtras" Click="btnAtras_Click"  Background="{x:Null}"  BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="22,11,161,551" >
-            <Image Source="/Imagenes/atras.png" Height="64" Width="47"/>
+        <Button Name="btnAtras" Click="btnAtras_Click"   BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="30,24,182,565" Background="{x:Null}" >
+            <Image Source="/Imagenes/atras.png" Height="32" Width="30"/>
         </Button>
-      
+
 
         <TextBlock Grid.Row="0" FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Arial Black" Margin="140,0,0,534" Grid.Column="1"  >REGISTRO DE CITAS</TextBlock>
-        <DatePicker Name="DatePickerDia" HorizontalAlignment="Left" Margin="44,271,0,0" VerticalAlignment="Top" Grid.Column="1" Width="178" SelectedDateChanged="DatePickerDia_OnSelectedDateChanged"/>
+        <DatePicker Name="DatePickerDia" HorizontalAlignment="Left" Margin="16,267,0,0" VerticalAlignment="Top" Grid.Column="1" Width="225" SelectedDateChanged="DatePickerDia_OnSelectedDateChanged" FontFamily="Segoe UI" FontSize="16"/>
         <ComboBox Margin="335,312,388,316" Grid.Column="1" />
-        <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="50,479,0,0" Foreground="#FF121B40" Height="22" Width="135" Grid.Column="1"><Run Text="TIPO DE VISITA"/></TextBlock>
+        <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="61,474,0,0" Foreground="#FF121B40" Height="22" Width="135" Grid.Column="1"><Run Text="TIPO DE VISITA"/></TextBlock>
         <ComboBox Margin="95,124,160,504" />
-        <ComboBox Name="ComboBoxHora" Margin="213,314,266,270" Grid.Column="1" DropDownClosed="ComboBoxHora_OnDropDownClosed"/>
-        <ComboBox Name="ComboBoxDuracion" Margin="212,389,266,195" Grid.Column="1" />
-        <ComboBox Name="ComboBoxTipoVisita" Margin="212,468,266,116" Grid.Column="1" />
-        <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="100,542,0,0" Foreground="#FF121B40" Height="22" Width="83" Grid.Column="1"><Run Text="ESTADO"/></TextBlock>
-        <ComboBox Name="ComboBoxEstado" Margin="212,537,266,47" Grid.Column="1" />
+        <ComboBox Name="ComboBoxHora" Margin="210,318,365,277" Grid.Column="1" DropDownClosed="ComboBoxHora_OnDropDownClosed" FontFamily="Segoe UI" FontSize="16"/>
+        <ComboBox Name="ComboBoxDuracion" Margin="210,391,364,205" Grid.Column="1" FontFamily="Segoe UI" FontSize="16" />
+        <ComboBox Name="ComboBoxTipoVisita" Margin="210,469,364,127" Grid.Column="1" FontFamily="Segoe UI" FontSize="16" />
+        <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="113,542,0,0" Foreground="#FF121B40" Height="22" Width="83" Grid.Column="1"><Run Text="ESTADO"/></TextBlock>
+        <ComboBox Name="ComboBoxEstado" Margin="210,536,364,58" Grid.Column="1" FontFamily="Segoe UI" FontSize="16" />
         <!--#endregion-->
 
 

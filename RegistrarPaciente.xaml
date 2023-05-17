@@ -47,7 +47,7 @@
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Border Grid.ColumnSpan="12" Grid.RowSpan="18" >
+            <Border Grid.ColumnSpan="12" Grid.RowSpan="18" Margin="0,10,0,-10" >
                 <Border.BorderBrush>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1" >
 
@@ -69,7 +69,7 @@
 
             <TextBlock Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="8" FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Arial Black"  ><Run Text="FICHA DE PACIENTE"/><LineBreak/><Run/></TextBlock>
             <!--#region TEXTBLOCK-->
-            <TextBlock Grid.Column="3" Grid.Row="2" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="90,0,0,0" Foreground="#FF121B40" Height="22" Width="30">ID</TextBlock>
+            <TextBlock Name="textblockID" Grid.Column="3" Grid.Row="2" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="90,0,0,0" Foreground="#FF121B40" Height="22" Width="30">ID</TextBlock>
             <TextBlock Grid.Column="6" Grid.Row="2" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF121B40" Height="22" Width="178" >PSICÓLOGO ASIGNADO</TextBlock>
 
             <TextBlock Grid.Column="3" Grid.Row="4" FontSize="16" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="51,0,0,0" Foreground="#FF121B40" Height="21" Width="69" >NOMBRE</TextBlock>
@@ -84,10 +84,6 @@
             <TextBlock Grid.Column="3" Grid.Row="10" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="80,0,0,0" Foreground="#FF121B40" Height="21" Width="40">SEXO</TextBlock>
             <TextBlock Grid.Column="6" Grid.Row="10" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF121B40" Height="21" Width="128">FECHA DE INICIO</TextBlock>
 
-            <TextBlock Grid.Column="4" Grid.Row="12" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="80,0,0,0" Text="GENOGRAMA" Foreground="#FF121B40" Height="22" Width="104"/>
-
-            <TextBlock Grid.Column="4" Grid.Row="14" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="39,0,0,0" Foreground="#FF121B40" Height="21" Width="149" Text="HISTORIA CLÍNICA"/>
-
             <!--#endregion-->
 
             <!--#region TEXTBOX-->
@@ -97,34 +93,88 @@
             <TextBox Name="TextCorreo" Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="3" Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="3,0,0,0"/>
 
             <TextBox Name="TextApellidos" Grid.Row="6" Grid.Column="4" Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16"/>
-            <TextBox Name="TextTelefono"  Grid.Row="6" Grid.Column="5"  Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="128,0,0,0" Grid.ColumnSpan="4"/>
+            <TextBox Name="TextTelefono"  Grid.Row="5" Grid.Column="6"  Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="3,32,0,0" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
 
             <TextBox Name="TextPoblacion" Grid.Row="8" Grid.Column="4" Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" TextAlignment="Left" Height="33" Width="348"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16"/>
             <!--#endregion-->
 
             <!--#region COMBOBOX-->
-            <ComboBox Name="ComboBoxDoctor" Grid.Column="7" Grid.Row="1" Margin="30,34,123,0" Grid.RowSpan="2" Grid.ColumnSpan="4" />
+            <ComboBox Name="ComboBoxDoctor" Grid.Column="7" Grid.Row="2" Margin="13,8,140,8" Grid.ColumnSpan="4" FontSize="16" />
 
-            <ComboBox Name="ComboBoxSexo" Grid.Column="4" Grid.Row="10" Margin="0,0,3,0" />
+            <ComboBox Name="ComboBoxSexo" Grid.Column="3" Grid.Row="10" Margin="159,0,170,8" FontSize="16" Grid.ColumnSpan="2" />
             <!--#endregion-->
 
             <!--#region DATAPICKER-->
-            <DatePicker Name="DatePickerNacimiento" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="4" Margin="13,0,0,34" Grid.RowSpan="2"></DatePicker>
-            <DatePicker Name="DatePickerAlta" Grid.Row="10" Grid.Column="7" Grid.ColumnSpan="4" Margin="13,0,0,0"/>
+            <DatePicker Name="DatePickerNacimiento" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="4" Margin="13,0,0,34" Grid.RowSpan="2" FontSize="16"></DatePicker>
+            <DatePicker Name="DatePickerAlta" Grid.Row="10" Grid.Column="7" Grid.ColumnSpan="4" Margin="13,0,0,0" FontSize="16"/>
             <!--#endregion-->
 
             <!--#region BOTONES-->
-            <Button Grid.Column="5" Grid.Row="11" Margin="0,34,0,0" Grid.RowSpan="2">GENERAR</Button>
 
-            <Button Grid.Column="5" Grid.Row="15" Margin="0,34,0,0" Grid.RowSpan="2" Click="Button_Click">IMPRIMIR</Button>
 
-            <Button Name="btnHistorialClinico"  Grid.Column="5" Grid.Row="13" Margin="0,33,0,33" Grid.RowSpan="3">INSERTAR</Button>
+            <Button Grid.Column="10" Margin="34,22,36,16" Click="Button_Click" Background="#FF0B4554" FontWeight="Bold" Foreground="#FFF7F7F7"  Content="EXPORTAR" FontSize="16" Grid.RowSpan="2" Grid.Row="15"  >
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Margin="8"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
-            <Button Name="btnGuardar" Click="btnGuardar_Click" Grid.Column="7" Grid.Row="15" Foreground="#FF002E9E" FontFamily="Bahnschrift SemiBold" FontWeight="Bold" FontSize="16" BorderBrush="{x:Null}" Background="#FFA2C0EA" Margin="13,0,0,0" Grid.ColumnSpan="2">GUARDAR
+            <Button x:Name="btnAdd"  Grid.Column="5" Grid.Row="15" Click="btnAdd_Click" Margin="128,22,18,16" Background="#FF0B4554" Foreground="White" FontSize="16" FontWeight="Bold" Grid.RowSpan="2" Grid.ColumnSpan="2" Content="AÑADIR ENTRADA">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Margin="8"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="btnHistorialClinico"  Grid.Column="7" Click="btnHistorialClinico_Click" Margin="16,22,212,16" Background="#FF0B4554" Foreground="White" FontSize="16" FontWeight="Bold" Grid.Row="15" Grid.ColumnSpan="4" Grid.RowSpan="2" Content="HISTORIAL CLÍNICO">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Margin="8"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Name="btnGuardar" Click="btnGuardar_Click" Grid.Column="10" Foreground="White" FontWeight="Bold" FontSize="16" BorderBrush="{x:Null}" Background="#FF0B4554" Margin="34,44,34,43">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Margin="8"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                GUARDAR
 
             </Button>
-            <Button Grid.Column="3" Name="btnAtras" Click="btnAtras_Click" Background="{x:Null}" Margin="27,34,57,33" BorderBrush="{x:Null}" Foreground="{x:Null}">
-                <Image Source="/Imagenes/atras.png"/>
+            <Button Grid.Column="3" Name="btnAtras" Click="btnAtras_Click" Background="{x:Null}" Margin="27,34,88,56" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                <Image Source="/Imagenes/atras.png" Width="30" Height="32"/>
             </Button>
 
 

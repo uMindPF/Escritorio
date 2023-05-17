@@ -12,6 +12,7 @@
     <None Remove="atras.png" />
     <None Remove="boton-editar.png" />
     <None Remove="calendario.png" />
+    <None Remove="cerrar-sesion.png" />
     <None Remove="contrasena.png" />
     <None Remove="eliminar.png" />
     <None Remove="logoCompletoBlanco.png" />
@@ -32,6 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="atras.png" />
+    <Resource Include="cerrar-sesion.png" />
     <Resource Include="Imagenes\anterior.png" />
     <Resource Include="Imagenes\atras.png" />
     <Resource Include="Imagenes\boton-editar.png" />

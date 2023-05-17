@@ -136,7 +136,7 @@ namespace uMind
             {
                 foreach (var doctor in doctores)
                 {
-	                cbPsicologo.Items.Add(doctor.nombre);
+	                cbPsicologo.Items.Add(doctor.nombre + " " + doctor.apellidos);
                 }
             }
             catch (Exception ex)

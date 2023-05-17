@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Github\repos\uMindPF_02\Escritorio\obj\Debug\net6.0-windows\
+C:\Users\MarionaGuaCam.DAM-21\source\repos\obj\Debug\net6.0-windows\
 uMind
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-E:\Github\repos\uMindPF_02\Escritorio\App.xaml
-6-706958973
+C:\Users\MarionaGuaCam.DAM-21\source\repos\App.xaml
+81045028974
 
-252053155404
-1961866763864
-BuscarPaciente.xaml;Login.xaml;MainWindow.xaml;PantallaDeCarga.xaml;RegistrarCita.xaml;RegistrarPaciente.xaml;
+27695725130
+196-649783478
+AddEntrada.xaml;BuscarPaciente.xaml;HistorialClinico.xaml;Login.xaml;MainWindow.xaml;PantallaDeCarga.xaml;RegistrarCita.xaml;RegistrarPaciente.xaml;
 
 False
 

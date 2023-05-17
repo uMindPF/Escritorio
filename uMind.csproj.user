@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AddEntrada.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="BuscarPaciente.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="HistorialClinico.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Login.xaml.cs">
@@ -24,7 +30,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AddEntrada.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="BuscarPaciente.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="HistorialClinico.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Login.xaml">

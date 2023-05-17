@@ -13,7 +13,7 @@ using System.IO;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
-
+using DocumentFormat.OpenXml.Office.PowerPoint.Y2021.M06.Main;
 
 namespace uMind
 {
@@ -24,13 +24,16 @@ namespace uMind
     {
         private List<Doctor> doctores;
         private MainWindow mainWindow;
+        
 
         public RegistrarPaciente(MainWindow mainWindow)
         {
             InitializeComponent();
 
             this.mainWindow = mainWindow;
-
+            textblockID.Visibility = Visibility.Collapsed;
+            TextID.Visibility = Visibility.Collapsed;
+            btnHistorialClinico.Visibility = Visibility.Collapsed;
             getDoctors();
             setSexo();
         }
@@ -94,7 +97,7 @@ namespace uMind
         {
 	        guardarCita();
         }
-
+        
         private async void guardarCita()
         {
 	        if (TextNombre.Text == "" || TextApellidos.Text == "" || TextTelefono.Text == "" ||
@@ -258,6 +261,32 @@ namespace uMind
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             exportData();
+        }
+
+        private void btnHistorialClinico_Click(object sender, RoutedEventArgs e)
+        {
+            int idPaciente = int.Parse(TextID.Text);
+            HistorialClinico historialClinico = new HistorialClinico(idPaciente);
+            historialClinico.ShowDialog();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (TextID.Text == string.Empty)
+            {
+                AddEntrada addEntrada = new AddEntrada();
+                addEntrada.ShowDialog();
+            }
+            else
+            {
+                int idPaciente = int.Parse(TextID.Text);
+                AddEntrada addEntrada = new AddEntrada(idPaciente);
+                addEntrada.ShowDialog();
+            }
+            
+
+
         }
     }
 }

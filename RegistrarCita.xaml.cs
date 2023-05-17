@@ -27,7 +27,7 @@ namespace uMind
             loadComboBoxs();
 
             TextBoxID.Text = paciente.id.ToString();
-            TextBoxName.Text = paciente.nombre;
+            TextBoxName.Text = paciente.nombre + " " + paciente.apellidos;
 
             cita = new Cita();
             cita.paciente = paciente;
