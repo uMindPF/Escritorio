@@ -20,9 +20,13 @@ namespace uMind
 	    private List<Doctor> doctors;
         private List<DateTime> horasDisponibles;
 
+        private bool editCita;
+
 		public RegistrarCita(Paciente paciente, MainWindow main)
         {
 	        InitializeComponent();
+
+	        editCita = false;
 
             loadComboBoxs();
 
@@ -38,6 +42,8 @@ namespace uMind
         public RegistrarCita(Cita cita, MainWindow main)
         {
             InitializeComponent();
+
+            editCita = true;
 
             loadComboBoxs();
 
@@ -85,9 +91,15 @@ namespace uMind
 			        return;
 		        }
 
-		        horasDisponibles = await CalcularHora.dayHours(date, doctor.id);
-
-                ComboBoxHora.Items.Clear();
+		        if (editCita)
+		        {
+					horasDisponibles = await CalcularHora.dayHours(date, doctor.id, cita);
+				}
+		        else
+		        {
+			        horasDisponibles = await CalcularHora.dayHours(date, doctor.id);
+				}
+		        ComboBoxHora.Items.Clear();
 
 		        foreach (var hora in horasDisponibles)
 		        {
