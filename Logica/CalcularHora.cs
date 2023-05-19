@@ -92,6 +92,7 @@ namespace uMind.Logica
 
 			foreach (var citas in citasDia)
 			{
+				if (cita != citas)
 				{
 					DateTime hora = DateTime.Parse(citas.hora);
 					horas.Remove(hora);
