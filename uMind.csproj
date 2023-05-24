@@ -9,12 +9,12 @@
 
   <ItemGroup>
     <None Remove="anterior.png" />
-    <None Remove="atras.png" />
     <None Remove="boton-editar.png" />
     <None Remove="calendario.png" />
     <None Remove="cerrar-sesion.png" />
     <None Remove="contrasena.png" />
     <None Remove="eliminar.png" />
+    <None Remove="Imagenes\cerrar-sesion.png" />
     <None Remove="logoCompletoBlanco.png" />
     <None Remove="logoUBlanco.png" />
     <None Remove="minimizar.png" />
@@ -33,12 +33,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="atras.png" />
-    <Resource Include="cerrar-sesion.png" />
     <Resource Include="Imagenes\anterior.png" />
     <Resource Include="Imagenes\atras.png" />
     <Resource Include="Imagenes\boton-editar.png" />
     <Resource Include="Imagenes\calendario.png" />
+    <Resource Include="Imagenes\cerrar-sesion.png" />
     <Resource Include="Imagenes\contrasena.png" />
     <Resource Include="Imagenes\eliminar.png" />
     <Resource Include="Imagenes\logoCompletoBlanco.png" />

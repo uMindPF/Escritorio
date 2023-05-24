@@ -224,3 +224,8 @@ C:\Users\MarionaGuaCam.DAM-21\source\repos\obj\Debug\net6.0-windows\HistorialCli
 C:\Users\MarionaGuaCam.DAM-21\source\repos\obj\Debug\net6.0-windows\HistorialClinico.baml
 C:\Users\MarionaGuaCam.DAM-21\source\repos\obj\Debug\net6.0-windows\AddEntrada.g.cs
 C:\Users\MarionaGuaCam.DAM-21\source\repos\obj\Debug\net6.0-windows\AddEntrada.baml
+E:\github\EscritorioDef\bin\Debug\net6.0-windows\DocumentFormat.OpenXml.dll
+E:\github\EscritorioDef\obj\Debug\net6.0-windows\AddEntrada.g.cs
+E:\github\EscritorioDef\obj\Debug\net6.0-windows\HistorialClinico.g.cs
+E:\github\EscritorioDef\obj\Debug\net6.0-windows\AddEntrada.baml
+E:\github\EscritorioDef\obj\Debug\net6.0-windows\HistorialClinico.baml

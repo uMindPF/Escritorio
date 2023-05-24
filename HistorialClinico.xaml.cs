@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using uMind.Model;
@@ -23,11 +24,16 @@ namespace uMind
     public partial class HistorialClinico : Window
     {
         private List<HistoriaClinica> historial;
-        public HistorialClinico(int idPaciente)
+        private Paciente paciente;
+
+        public HistorialClinico(Paciente paciente)
         {
             
             InitializeComponent();
-            cargarHistorial(idPaciente);
+            cargarHistorial(paciente.id);
+            this.paciente = paciente;
+            TextId.Text = paciente.id + "";
+            TextName.Text = paciente.nombre;
         }
 
         private async void cargarHistorial(int id)
@@ -35,25 +41,49 @@ namespace uMind
             historial = await HistorialClinicoService.getHistorialClinico(id);
             datagridHistorial.Items.Clear();
 
-            displayPacientes(historial);
-
-
+            displayHistorial(historial);
         }
 
-        private void displayPacientes(List<HistoriaClinica> historialClinico)
+        private void displayHistorial(List<HistoriaClinica> historialClinico)
         {
+	        if (historialClinico == null)
+	        {
+		        return;
+	        }
+
             foreach (var historial in historialClinico)
             {
 
                 datagridHistorial.Items.Add(new
                     {
                         Id = historial.id,
-                        Descripcion = historial.descripcion,
                         Fecha = historial.fecha,
                         Titulo = historial.titulo
                     });
-                
             }
         }
+
+
+
+        private void BtnCerrar_OnClick(object sender, RoutedEventArgs e)
+        {
+	        this.Close();
+        }
+
+        private void ModificarEntrada(object sender, RoutedEventArgs e)
+        {
+	        var data = datagridHistorial.SelectedItem;
+	        int id = (int)data.GetType().GetProperty("Id").GetValue(data, null);
+
+	        foreach (var entrada in historial)
+	        {
+		        if (entrada.id == id)
+		        {
+			        AddEntrada modificarCita = new AddEntrada(entrada);
+			        modificarCita.ShowDialog();
+			        break;
+		        }
+	        }
+		}
     }
 }

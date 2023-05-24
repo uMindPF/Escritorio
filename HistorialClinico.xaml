@@ -19,21 +19,30 @@
                     <GradientStop Color="#FF6AE4E1" Offset="0.25"></GradientStop>
                 </LinearGradientBrush>
             </Border.Background>
-            <Button Margin="817,20,30,378" Name="btnCerrar"  BorderBrush="{x:Null}" Background="{x:Null}">
+            <Button Margin="817,20,30,378" Name="btnCerrar"  BorderBrush="{x:Null}" Background="{x:Null}" Click="BtnCerrar_OnClick">
                 <Image Source="Imagenes/salir.png" Height="46" Width="46"/>
             </Button>
         </Border>
         <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="67,43,0,0" Foreground="#FF0D1771" Height="22" Width="74">ID</TextBlock>
         <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="366,54,0,0" Foreground="#FF0D1771" Height="22" Width="70">NOMBRE</TextBlock>
-        <TextBox Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="32" Width="172"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="104,38,0,0" />
-        <TextBox Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="34" Width="282"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="450,43,0,0"  />
+        <TextBox Name="TextId" Padding="10,5,0,0" IsReadOnly="True" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="32" Width="172"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="104,38,0,0" />
+        <TextBox Name="TextName"  Padding="10,5,0,0" IsReadOnly="True" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="34" Width="282"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="450,43,0,0"  />
         <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}"  CellStyle="{DynamicResource DataGridCellStyle1}" Style="{DynamicResource DataGridStyle1}"   FrozenColumnCount="2" AutoGenerateColumns="True" Name="datagridHistorial" Margin="10,103,10,20"  FontSize="14" FontWeight="Normal" HeadersVisibility="All" Background="#FF498384"  >
             <DataGrid.Columns>
-
+                <DataGridTemplateColumn HeaderStyle="{StaticResource HeaderStyle}" Header="#" IsReadOnly="True" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Name="btnModificarEntrada"  Click="ModificarEntrada"  Background="#FFA57509" >
+                                    <Image  Source="Imagenes/modificar.png"  Width="20" Height="20"/>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn  HeaderStyle="{StaticResource HeaderStyle}" Header="Id" Binding="{Binding Id}" IsReadOnly="True" Width="Auto"></DataGridTextColumn>
-                <DataGridTextColumn  HeaderStyle="{StaticResource HeaderStyle}"  Header="Descripción" Binding="{Binding Descripcion}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn  HeaderStyle="{StaticResource HeaderStyle}"  Header="Fecha" Binding="{Binding Fecha}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn  HeaderStyle="{StaticResource HeaderStyle}"  Header="Titulo" Binding="{Binding Titulo}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn  HeaderStyle="{StaticResource HeaderStyle}"  Header="Fecha" Binding="{Binding Fecha}" IsReadOnly="True" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
 

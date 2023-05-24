@@ -18,6 +18,9 @@ namespace uMind
         public Login()
         {
             InitializeComponent();
+
+            usernameText.Text = Properties.Settings.Default.Username;
+            passwordText.Password = Properties.Settings.Default.Password;
         }
 
         private async void btnEntrar_Click(object sender, RoutedEventArgs e)

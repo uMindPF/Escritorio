@@ -24,6 +24,7 @@ namespace uMind
     {
         private List<Doctor> doctores;
         private MainWindow mainWindow;
+        private Paciente paciente;
         
 
         public RegistrarPaciente(MainWindow mainWindow)
@@ -43,6 +44,7 @@ namespace uMind
 			InitializeComponent();
 
             this.mainWindow = mainWindow;
+            this.paciente = paciente;
 			
 			setSexo();
             setPaciente(paciente);
@@ -265,8 +267,7 @@ namespace uMind
 
         private void btnHistorialClinico_Click(object sender, RoutedEventArgs e)
         {
-            int idPaciente = int.Parse(TextID.Text);
-            HistorialClinico historialClinico = new HistorialClinico(idPaciente);
+	        HistorialClinico historialClinico = new HistorialClinico(paciente);
             historialClinico.ShowDialog();
         }
 
@@ -280,8 +281,7 @@ namespace uMind
             }
             else
             {
-                int idPaciente = int.Parse(TextID.Text);
-                AddEntrada addEntrada = new AddEntrada(idPaciente);
+                AddEntrada addEntrada = new AddEntrada(paciente);
                 addEntrada.ShowDialog();
             }
             

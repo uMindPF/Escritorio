@@ -47,8 +47,6 @@ namespace uMind
 
         private void btnModificarCita_Click(object sender, RoutedEventArgs e)
         {
-	        Button button = (Button)sender;
-
 	        var data = dataGridCitas.SelectedItem;
 	        int id = (int)data.GetType().GetProperty("IdCita").GetValue(data, null);
 
@@ -198,7 +196,8 @@ namespace uMind
 
         private void displayPacientes(List<Paciente> pacientes)
         {
-            try
+	        dataGridPacientes2.Items.Clear();
+			try
             {
                 foreach (var paciente in pacientes)
                 {
@@ -302,9 +301,7 @@ namespace uMind
 
         private void btnModificarPaciente_Click(object sender, RoutedEventArgs e)
         {
-            Button button = (Button) sender;
-
-            var data = dataGridPacientes2.SelectedItem;
+	        var data = dataGridPacientes2.SelectedItem;
             int id = (int)data.GetType().GetProperty("Id").GetValue(data, null);
 
             foreach (var paciente in pacientes)
@@ -337,5 +334,15 @@ namespace uMind
 			}
 			datePickerCita.SelectedDate = ((DateTime)selectedDate).AddDays(-1);
 		}
+
+        private void CerrarSesionOnClick(object sender, RoutedEventArgs e)
+        {
+	        Properties.Settings.Default.Username = "";
+            Properties.Settings.Default.Password = "";
+
+            Login login = new Login();
+			login.Show();
+			this.Close();
+        }
     }
 }

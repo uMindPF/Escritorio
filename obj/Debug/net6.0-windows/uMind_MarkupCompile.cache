@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\MarionaGuaCam.DAM-21\source\repos\obj\Debug\net6.0-windows\
+E:\github\EscritorioDef\obj\Debug\net6.0-windows\
 uMind
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\MarionaGuaCam.DAM-21\source\repos\App.xaml
+E:\github\EscritorioDef\App.xaml
 81045028974
 
 27695725130
-196-649783478
+196-200246436
 AddEntrada.xaml;BuscarPaciente.xaml;HistorialClinico.xaml;Login.xaml;MainWindow.xaml;PantallaDeCarga.xaml;RegistrarCita.xaml;RegistrarPaciente.xaml;
 
 False

@@ -204,8 +204,8 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Height="37" Width="38">
-            <Image Height="35" Canvas.Left="849" Canvas.Top="123" Width="29" Source="/cerrar-sesion.png" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+        <Button HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Height="37" Width="38" Click="CerrarSesionOnClick">
+            <Image Height="35" Canvas.Left="849" Canvas.Top="123" Width="29" Source="/Imagenes/cerrar-sesion.png" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

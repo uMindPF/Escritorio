@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\MarionaGuaCam.DAM-21\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\MarionaGuaCam.DAM-21\\.nuget\\packages",
+      "C:\\Users\\enriclopped\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\enriclopped\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

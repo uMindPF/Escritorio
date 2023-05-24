@@ -29,46 +29,25 @@
 
 
         </Border>
-        <TextBlock Name="NuevaEntrada" FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Arial Black" Margin="158,0,0,697" Height="49"  ><Run Text="NUEVA ENTRADA"/><LineBreak/><Run/></TextBlock>
-        
+        <TextBlock x:Name="NuevaEntrada" FontWeight="Bold" FontSize="30" Foreground="#FF0B4554" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Arial Black" Margin="158,0,0,697" Height="49"  ><Run Language="es-es" Text="EDITAR "/><Run Text="ENTRADA"/><LineBreak/><Run/></TextBlock>
+
 
         <Button Name="btnAtras" Click="btnAtras_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="33,23,1303,715">
-            <Image Source="/atras.png" Width="30" Height="32"/>
+            <Image Source="/Imagenes/atras.png" Width="30" Height="32"/>
         </Button>
         <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="279,155,0,0" Foreground="#FF0D1771" Height="22" Width="74">ID</TextBlock>
         <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="158,217,0,0" Foreground="#FF0D1771" Height="22" Width="69">TÍTULO</TextBlock>
-        <TextBox Name="TextID" Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="33" Width="172"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="353,139,0,0" />
-        <TextBox Name="TextNombre"  Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="32" Width="398"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="794,140,0,0"  />
+        <TextBox Name="TextID" Padding="10,5,0,0" IsReadOnly="True" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="33" Width="172"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="353,139,0,0" />
+        <TextBox Name="TextNombre"  Padding="10,5,0,0" IsReadOnly="True" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="32" Width="398"  FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" Margin="794,140,0,0"  />
         <TextBlock  FontSize="16" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="700,155,0,0" Foreground="#FF0D1771" Height="22" Width="70">NOMBRE</TextBlock>
         <TextBox x:Name="TextTitulo" Padding="10,5,0,0" BorderBrush="#FFC1D2EA" BorderThickness="0,0,0,3" HorizontalAlignment="Left" VerticalAlignment="Top" TextAlignment="Left" Height="34" Width="916" FontStyle="Normal" FontFamily="Segoe UI" Foreground="Black" Background="Transparent" FontSize="16" IsReadOnly="False" Margin="244,205,0,0" />
 
-        <TextBox Text="{Binding Texto}"
+        <TextBox
              AcceptsReturn="True"
              Name="TextDescripcion"
              KeyDown="TextBox_KeyDown"
              Padding="10" FontSize="16"
              TextWrapping="Wrap" BorderBrush="#FF042B9E" Margin="158,256,122,158">
-            <TextBox.Template>
-                <ControlTemplate TargetType="TextBox">
-                    <ScrollViewer VerticalScrollBarVisibility="Auto">
-                        <ScrollViewer.Template>
-                            <ControlTemplate TargetType="ScrollViewer">
-                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                                    <ScrollContentPresenter />
-                                </Border>
-                            </ControlTemplate>
-                        </ScrollViewer.Template>
-                        <TextBox Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                             AcceptsReturn="True"
-                             KeyDown="TextBox_KeyDown"
-                             Padding="{TemplateBinding Padding}"
-                             FontSize="{TemplateBinding FontSize}"
-                             TextWrapping="{TemplateBinding TextWrapping}"
-                             Background="{TemplateBinding Background}" />
-                        <!-- Agregado -->
-                    </ScrollViewer>
-                </ControlTemplate>
-            </TextBox.Template>
             <TextBox.Background>
                 <SolidColorBrush Color="#FF2FB983" Opacity="0.5"/>
             </TextBox.Background>

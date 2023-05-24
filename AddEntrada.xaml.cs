@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,19 +17,37 @@ using uMind.Logica;
 using uMind.Model;
 using uMind.Service;
 
+
 namespace uMind
 {
-    /// <summary>
-    /// Lógica de interacción para AddEntrada.xaml
-    /// </summary>
-    public partial class AddEntrada : Window
+	/// <summary>
+	/// Lógica de interacción para AddEntrada.xaml
+	/// </summary>
+
+
+	public partial class AddEntrada : Window
     {
-        private Paciente pacientes;
-  
-        public AddEntrada(int id)
+        private HistoriaClinica historiaClinica;
+
+        public AddEntrada(Paciente paciente)
         {
             InitializeComponent();
-            setPaciente(id);
+            historiaClinica = new HistoriaClinica();
+            historiaClinica.paciente = paciente;
+
+            TextID.Text = paciente.id + "";
+            TextNombre.Text = paciente.nombre;
+        }
+
+        public AddEntrada(HistoriaClinica entrada)
+        {
+            InitializeComponent();
+            historiaClinica = entrada;
+
+            TextID.Text = entrada.paciente.id + "";
+            TextNombre.Text = entrada.paciente.nombre;
+            TextTitulo.Text = entrada.titulo;
+            TextDescripcion.Text = entrada.descripcion;
         }
 
         public AddEntrada() {
@@ -47,39 +66,17 @@ namespace uMind
             }
         }
 
-        private async void setPaciente(int id)
-        {
-            pacientes = await PacienteService.getPacienteId(id);
-
-            TextID.Text = pacientes.id.ToString();
-            TextNombre.Text = pacientes.nombre;
-
-        }
-
-        private async void saveHistorial(int id)
-        {
-            pacientes = await PacienteService.getPacienteId(id);
-
-            TextID.Text = pacientes.id.ToString();
-            TextNombre.Text = pacientes.nombre;
-
-        }
-
         private async void Guardar_Click(object sender, RoutedEventArgs e)
         {
-     
-            HistoriaClinica historiaClinica = new HistoriaClinica();
-            historiaClinica.titulo = TextTitulo.Text;
+	        historiaClinica.titulo = TextTitulo.Text;
             historiaClinica.descripcion = TextDescripcion.Text;
-            //historiaClinica.paciente = ;
-            historiaClinica.fecha = (DateTime.Now).ToString();
+            historiaClinica.fecha = Fechas.cambiarFormato((DateTime.Now).ToString());
 
             try
             {
                 await HistorialClinicoService.saveHsitoriaClinica(historiaClinica);
                 MessageBox.Show("Entrada registrada");
                 this.Close();
-
             }
             catch (Exception ex)
             {

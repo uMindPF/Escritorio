@@ -20,7 +20,7 @@ namespace uMind.Service
 				HttpClient httpClient = new HttpClient();
 				httpClient.DefaultRequestHeaders.Add("Authorization", token);
 
-				using HttpResponseMessage response = await httpClient.GetAsync(ConnectionInfo.URL_API + "/consultas/historial/paciente/" + idPaciente);
+				using HttpResponseMessage response = await httpClient.GetAsync(ConnectionInfo.URL_API + "consultas/historial/paciente/" + idPaciente);
 
 				if (response.IsSuccessStatusCode)
 				{
