@@ -75,12 +75,6 @@ namespace uMind.Service
             return null;
         }
 
-        private class Data
-        {
-            public int id { get; set; }
-            public string date { get; set; }
-        }
-
         public static async Task<List<Cita>> getCitasDoctorDate(int idDoctor, DateTime date)
         {
 	        try
@@ -89,20 +83,11 @@ namespace uMind.Service
 		        HttpClient client = new HttpClient();
 		        client.DefaultRequestHeaders.Add("Authorization", token);
 
-		        Data sendData = new Data();
-
-		        sendData.id = idDoctor;
-		        sendData.date = date.ToString("yyyy-MM-dd");
-
-		        string json = JsonSerializer.Serialize(sendData);
-		        StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-
 		        using HttpResponseMessage response =
-			        await client.PostAsync(ConnectionInfo.URL_API + "/consultas/citas/dateDoctor", content);
+			        await client.GetAsync(ConnectionInfo.URL_API + "consultas/citas/"+ idDoctor + "/" + date.ToString("yyyy-MM-dd"));
 
 		        if (response.IsSuccessStatusCode)
 		        {
-			        MessageBox.Show(await response.Content.ReadAsStringAsync());
 			        return JsonSerializer.Deserialize<List<Cita>>(await response.Content.ReadAsStringAsync());
 		        }
 

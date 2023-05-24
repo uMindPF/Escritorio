@@ -47,7 +47,6 @@ namespace uMind.Logica
 
 			foreach (var citas in citasDia)
 			{
-				MessageBox.Show(citas.hora);
 				DateTime hora = DateTime.Parse(citas.hora);
 				horas.Remove(hora);
 
@@ -55,10 +54,57 @@ namespace uMind.Logica
 
 				for (int i = 0; i < duracion; i++)
 				{
-					hora.AddMinutes(15);
+					hora = hora.AddMinutes(15);
 					horas.Remove(hora);
 				}
 
+			}
+
+			return horas;
+		}
+
+		public static async Task<List<DateTime>> dayHours(DateTime date, int idDoctor, Cita cita)
+		{
+			List<Cita> citasDia = await CitaService.getCitasDoctorDate(idDoctor, date);
+
+			List<DateTime> horas = new List<DateTime>();
+
+			for (int i = horaInicio; i < horaFin; i++)
+			{
+				for (int j = 0; j < 60; j += 15)
+				{
+					if (i == 18 && j > 30)
+					{
+						break;
+					}
+
+					string horaString = i + ":" + j;
+					DateTime hora = DateTime.Parse(horaString);
+
+					horas.Add(hora);
+				}
+			}
+
+			if (citasDia == null)
+			{
+				return horas;
+			}
+
+			foreach (var citas in citasDia)
+			{
+				if (cita != citas)
+				{
+					DateTime hora = DateTime.Parse(citas.hora);
+					horas.Remove(hora);
+
+					double duracion = citas.duracion / 15;
+
+					for (int i = 0; i < duracion; i++)
+					{
+						hora = hora.AddMinutes(15);
+						horas.Remove(hora);
+					}
+				}
 			}
 
 			return horas;
