@@ -96,7 +96,7 @@
                                                 <Button Name="btnModificarCita"  Click="btnModificarCita_Click" Background="#FFA57509" >
                                                     <Image Width="20" Height="20" Source="Imagenes/modificar.png" ></Image>
                                                 </Button>
-                                                <Button Margin="5 0 0 0" Background="Red">
+                                                <Button Margin="5 0 0 0" Background="Red" Click="DeleteCita">
                                                     <Image Width="20" Height="20" Source="Imagenes/salir.png" ></Image>
                                                 </Button>
                                             </StackPanel>

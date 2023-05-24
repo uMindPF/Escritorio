@@ -61,7 +61,21 @@ namespace uMind
 	        }
         }
 
-        private void btnMinimizar_Click(object sender, RoutedEventArgs e)
+        private void DeleteCita(object sender, RoutedEventArgs e)
+        {
+	        var data = dataGridCitas.SelectedItem;
+	        int id = (int)data.GetType().GetProperty("IdCita").GetValue(data, null);
+
+            deleteCitaAsync(id);
+		}
+
+        private async void deleteCitaAsync(int id)
+        {
+	        await CitaService.deleteCita(id);
+	        getCitasAsync();
+		}
+
+		private void btnMinimizar_Click(object sender, RoutedEventArgs e)
         {
             Window mainWindow = Application.Current.MainWindow;
             mainWindow.WindowState = WindowState.Minimized;

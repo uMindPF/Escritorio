@@ -116,5 +116,19 @@ namespace uMind.Service
 		        throw exception;
 	        }
 	    }
+
+        public static async Task deleteCita(int id)
+        {
+			string token = await TokenService.getToken();
+			HttpClient client = new HttpClient();
+			client.DefaultRequestHeaders.Add("Authorization", token);
+
+			using HttpResponseMessage response = await client.GetAsync(ConnectionInfo.URL_API + "consultas/citas/delete/" + id);
+			if (!response.IsSuccessStatusCode)
+			{
+				Exception exception = new Exception(await response.Content.ReadAsStringAsync());
+				throw exception;
+			}
+        }
     }
 }
